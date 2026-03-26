@@ -1,122 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jah'sRock Cleaning</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jah'sRock Cleaning</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f5f7fa;
-      color: #0A1F44;
-    }
+<style>
+html { scroll-behavior: smooth; }
 
-    /* HEADER */
-    header {
-      background: white;
-      text-align: center;
-      padding: 50px 20px;
-      border-bottom: 3px solid #D4AF37;
-    }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f7fa;
+  color: #0A1F44;
+}
 
-    header img {
-      width: 160px;
-      margin-bottom: 15px;
-    }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  text-align: center;
+  padding: 40px 20px;
+  border-bottom: 3px solid #D4AF37;
+}
 
-    h1 {
-      font-size: 40px;
-      margin: 10px 0;
-    }
+header img {
+  width: 140px;
+  margin-bottom: 10px;
+}
 
-    /* BUTTONS */
-    .btn {
-      display:inline-block;
-      margin:10px;
-      background: #0A1F44;
-      padding: 12px 22px;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+h1 {
+  font-size: 38px;
+  margin: 10px 0;
+}
 
-    .btn:hover {
-      background: #D4AF37;
-      color: black;
-    }
+.btn {
+  display:inline-block;
+  margin:10px;
+  background: #0A1F44;
+  padding: 12px 22px;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
 
-    .btn-green {
-      background:#25D366;
-    }
+.btn:hover {
+  background: #D4AF37;
+  color: black;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
 
-    .btn-dark {
-      background:#003580;
-    }
+.btn-green { background:#25D366; }
+.btn-dark { background:#003580; }
 
-    /* SECTIONS */
-    section {
-      padding: 50px 20px;
-      text-align: center;
-    }
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
 
-    h2 {
-      margin-bottom: 30px;
-    }
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease forwards;
+}
 
-    /* SERVICES */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-      gap: 20px;
-    }
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      border-left: 5px solid #D4AF37;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      font-weight: bold;
-    }
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 20px;
+}
 
-    /* GALLERY */
-    .gallery {
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-      gap:15px;
-    }
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 5px solid #D4AF37;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  font-weight: bold;
+}
 
-    .gallery img {
-      width:100%;
-      border-radius:10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
+.gallery {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap:15px;
+}
 
-    /* TESTIMONIAL */
-    .testimonial {
-      background: white;
-      padding:20px;
-      margin:10px auto;
-      max-width:500px;
-      border-radius:10px;
-      border-left: 4px solid #D4AF37;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-    }
+.gallery img {
+  width:100%;
+  border-radius:10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
 
-    /* FOOTER */
-    footer {
-      background: #0A1F44;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
+.testimonial {
+  background: white;
+  padding:20px;
+  margin:10px auto;
+  max-width:500px;
+  border-radius:10px;
+  border-left: 4px solid #D4AF37;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
 
-  </style>
+footer {
+  background: #0A1F44;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+</style>
 </head>
 
 <body>
@@ -124,14 +127,20 @@
 <header>
   <img src="Logo.jpeg" alt="Jah'sRock Logo">
   <h1>Jah'sRock Cleaning</h1>
-  <p>Reliable Domestic & Commercial Cleaning Services</p>
+  <p style="font-size:18px; max-width:600px; margin:10px auto;">
+    Reliable, professional cleaning services delivering spotless results every time.
+  </p>
 
   <a class="btn" href="tel:07892645927">Call Now</a>
   <a class="btn btn-green" href="https://wa.me/447892645927">WhatsApp Us</a>
   <a class="btn btn-dark" href="#gallery">View Cleaning Work</a>
 </header>
 
-<section>
+<section class="fade-in">
+  <img src="google pics.png" style="width:100%; max-width:1000px; border-radius:12px;">
+</section>
+
+<section class="fade-in">
   <h2>Our Services</h2>
   <div class="services">
     <div class="card">House Cleaning</div>
@@ -143,33 +152,30 @@
   </div>
 </section>
 
-<section id="gallery">
+<section id="gallery" class="fade-in">
   <h2>Our Cleaning Work</h2>
-  <p>Before & after results from our recent jobs</p>
-
   <div class="gallery">
-    <img src="clean1.jpg" alt="Cleaning work">
-    <img src="clean2.jpg" alt="Cleaning work">
-    <img src="clean3.jpg" alt="Cleaning work">
+    <img src="corridor1.jpg.png">
+    <img src="Corridor2.jpg.png">
+    <img src="Kitchen2.jpg.png">
+    <img src="lounge.jpg.png">
+    <img src="lounge2.jpg.png">
+    <img src="Lounge3.jpg.png">
+    <img src="MainCorridor.jpg.png">
+    <img src="MiniKitchen.jpg.png">
+    <img src="Toilet.jpg.png">
+    <img src="Toilet2.jpg.png">
+    <img src="Toilet3.jpg.png">
   </div>
 </section>
 
-<section>
+<section class="fade-in">
   <h2>Why Choose Us?</h2>
   <p>Fully insured, reliable and professional cleaning team delivering high-quality results every time.</p>
-  <p><strong>Serving Hatfield, St Albans & Surrounding Areas</strong></p>
 </section>
 
-<section>
-  <h2>What Our Clients Say</h2>
-  <div class="testimonial">“Very professional and reliable service. My house was spotless!”</div>
-  <div class="testimonial">“Highly recommend Jah'sRock Cleaning – great attention to detail.”</div>
-</section>
-
-<section>
+<section class="fade-in">
   <h2>Get a Free Quote</h2>
-  <p>Call, WhatsApp or email us today</p>
-
   <a class="btn" href="tel:07892645927">Call Now</a>
   <a class="btn btn-green" href="https://wa.me/447892645927">WhatsApp</a>
   <a class="btn btn-dark" href="mailto:jahsrockcleaning@gmail.com">Email Us</a>
@@ -177,7 +183,6 @@
 
 <footer>
   <p>© 2026 Jah'sRock Cleaning</p>
-  <p>Email: jahsrockcleaning@gmail.com</p>
 </footer>
 
 </body>
