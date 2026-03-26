@@ -23,11 +23,11 @@ body {
   border-bottom:2px solid #D4AF37;
 }
 
+/* LOGO */
 .logo {
   display:flex;
   align-items:center;
 }
-
 .logo img {
   width:60px;
   margin-right:10px;
@@ -44,10 +44,7 @@ body {
 }
 
 /* DROPDOWN */
-.dropdown {
-  position:relative;
-}
-
+.dropdown { position:relative; }
 .dropdown-menu {
   display:none;
   position:absolute;
@@ -58,10 +55,7 @@ body {
   padding:15px;
   border-radius:8px;
 }
-
-.dropdown:hover .dropdown-menu {
-  display:block;
-}
+.dropdown:hover .dropdown-menu { display:block; }
 
 /* HERO */
 .hero {
@@ -69,10 +63,18 @@ body {
   padding:50px 20px;
 }
 
-/* SECTION */
+/* SECTIONS */
 section {
   padding:60px 20px;
   text-align:center;
+  opacity:0;
+  transform:translateY(30px);
+  transition:1s;
+}
+
+section.show {
+  opacity:1;
+  transform:translateY(0);
 }
 
 /* CARDS */
@@ -92,24 +94,48 @@ section {
 /* GALLERY */
 .gallery {
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:15px;
+  grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+  gap:12px;
+  max-width:1000px;
+  margin:auto;
 }
 
 .gallery img {
   width:100%;
-  height:160px;
+  height:130px;
   object-fit:cover;
-  border-radius:10px;
+  border-radius:8px;
+  cursor:pointer;
 }
 
-/* BEFORE AFTER */
-.before-after {
+/* FULLSCREEN IMAGE */
+#imageModal {
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.8);
+  justify-content:center;
+  align-items:center;
+}
+#imageModal img {
+  max-width:90%;
+  max-height:90%;
+}
+
+/* REVIEWS */
+.reviews {
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:20px;
-  max-width:800px;
-  margin:auto;
+}
+.review {
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* FORM */
@@ -119,21 +145,18 @@ form {
   display:flex;
   flex-direction:column;
 }
-
 input, textarea {
   margin:10px 0;
   padding:12px;
   border-radius:6px;
   border:1px solid #ccc;
 }
-
 button {
   padding:12px;
   background:#0A1F44;
   color:white;
   border:none;
   border-radius:6px;
-  cursor:pointer;
 }
 
 /* MODAL */
@@ -146,7 +169,6 @@ button {
   height:100%;
   background:rgba(0,0,0,0.5);
 }
-
 .modal-content {
   background:white;
   padding:25px;
@@ -182,7 +204,6 @@ footer {
       <div class="dropdown-menu">
         <p>📞 07892645927</p>
         <p>📧 jahsrockcleaning@gmail.com</p>
-        <p>💬 WhatsApp</p>
       </div>
     </div>
   </div>
@@ -204,26 +225,29 @@ footer {
   </div>
 </section>
 
-<!-- BEFORE AFTER -->
-<section>
-  <h2>Before & After</h2>
-  <div class="before-after">
-    <img src="corridor1.jpg.png">
-    <img src="Corridor2.jpg.png">
-  </div>
-</section>
-
 <!-- GALLERY -->
 <section>
   <h2>Our Work</h2>
   <div class="gallery">
-    <img src="Kitchen2.jpg.png">
-    <img src="lounge.jpg.png">
-    <img src="lounge2.jpg.png">
-    <img src="Lounge3.jpg.png">
-    <img src="MainCorridor.jpg.png">
-    <img src="MiniKitchen.jpg.png">
-    <img src="Toilet.jpg.png">
+    <img src="corridor1.jpg.png" onclick="openImage(this.src)">
+    <img src="Corridor2.jpg.png" onclick="openImage(this.src)">
+    <img src="Kitchen2.jpg.png" onclick="openImage(this.src)">
+    <img src="lounge.jpg.png" onclick="openImage(this.src)">
+    <img src="lounge2.jpg.png" onclick="openImage(this.src)">
+    <img src="Lounge3.jpg.png" onclick="openImage(this.src)">
+    <img src="MainCorridor.jpg.png" onclick="openImage(this.src)">
+    <img src="MiniKitchen.jpg.png" onclick="openImage(this.src)">
+    <img src="Toilet.jpg.png" onclick="openImage(this.src)">
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section>
+  <h2>Customer Reviews</h2>
+  <div class="reviews">
+    <div class="review">⭐️⭐️⭐️⭐️⭐️ Excellent service, very professional.</div>
+    <div class="review">⭐️⭐️⭐️⭐️⭐️ My house was spotless after cleaning.</div>
+    <div class="review">⭐️⭐️⭐️⭐️⭐️ Highly recommend Jah'sRock Cleaning.</div>
   </div>
 </section>
 
@@ -245,21 +269,23 @@ footer {
 <!-- BOOKING -->
 <section>
   <h2>Book a Cleaning</h2>
-
   <form onsubmit="openModal('booking'); return false;">
     <input type="text" placeholder="Full Name" required>
     <input type="email" placeholder="Email" required>
-    <input type="tel" placeholder="Phone Number">
     <textarea placeholder="Describe your cleaning needs"></textarea>
     <button type="submit">Submit Request</button>
   </form>
 </section>
 
+<!-- IMAGE MODAL -->
+<div id="imageModal" onclick="closeImage()">
+  <img id="modalImg">
+</div>
+
 <!-- MODAL -->
 <div class="modal" id="modal">
   <div class="modal-content">
     <h3 id="modalTitle">Coming Soon</h3>
-    <p>This feature will be available soon.</p>
     <button onclick="closeModal()">Close</button>
   </div>
 </div>
@@ -269,18 +295,32 @@ footer {
 </footer>
 
 <script>
-function openModal(type) {
-  document.getElementById("modal").style.display = "block";
+/* ANIMATION */
+const sections = document.querySelectorAll("section");
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      sec.classList.add("show");
+    }
+  });
+});
 
-  if(type === "login") {
-    document.getElementById("modalTitle").innerText = "Login Coming Soon";
-  } else {
-    document.getElementById("modalTitle").innerText = "Booking System Coming Soon";
-  }
+/* IMAGE VIEW */
+function openImage(src){
+  document.getElementById("imageModal").style.display="flex";
+  document.getElementById("modalImg").src=src;
+}
+function closeImage(){
+  document.getElementById("imageModal").style.display="none";
 }
 
-function closeModal() {
-  document.getElementById("modal").style.display = "none";
+/* MODAL */
+function openModal(type){
+  document.getElementById("modal").style.display="block";
+}
+function closeModal(){
+  document.getElementById("modal").style.display="none";
 }
 </script>
 
