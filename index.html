@@ -29,17 +29,8 @@ body{
   border-bottom:1px solid rgba(0,0,0,0.05);
 }
 
-.logo{
-  display:flex;
-  align-items:center;
-}
-.logo img{
-  width:50px;
-  height:50px;
-  border-radius:50%;
-  object-fit:cover;
-  margin-right:10px;
-}
+.logo{display:flex;align-items:center;}
+.logo img{width:50px;height:50px;border-radius:50%;margin-right:10px;}
 
 .contact-btn{
   padding:10px 18px;
@@ -51,17 +42,9 @@ body{
 }
 
 /* HERO */
-.hero{
-  text-align:center;
-  padding:50px 20px 30px;
-}
-
+.hero{text-align:center;padding:50px 20px 30px;}
 .hero h1{font-size:40px;}
-.hero p{
-  max-width:650px;
-  margin:10px auto;
-  color:#555;
-}
+.hero p{max-width:650px;margin:10px auto;color:#555;}
 
 .hero button{
   margin:8px;
@@ -73,16 +56,15 @@ body{
   cursor:pointer;
 }
 
-/* ✅ FIXED TRUST (FORCED HORIZONTAL) */
+/* ✅ FIXED TRUST (horizontal) */
 .trust{
   margin-top:15px;
   display:flex;
   justify-content:center;
-  gap:15px;
-  flex-wrap:nowrap; /* prevents vertical stacking */
-  overflow-x:auto;  /* allows scroll if needed */
+  gap:12px;
+  flex-wrap:nowrap;
+  overflow-x:auto;
 }
-
 .trust div{
   white-space:nowrap;
   background:white;
@@ -92,10 +74,7 @@ body{
 }
 
 /* SECTION */
-section{
-  padding:40px 20px;
-  text-align:center;
-}
+section{padding:40px 20px;text-align:center;}
 
 /* SERVICES */
 .grid{
@@ -138,43 +117,32 @@ section{
   margin:auto;
 }
 
-/* ✅ FIXED VIDEO */
+/* FIXED VIDEO */
 .video-box{
   background:white;
   padding:15px;
   border-radius:14px;
   box-shadow:0 10px 25px rgba(0,0,0,0.08);
-  height:100%;
 }
-
 .video-frame{
   position:relative;
-  width:100%;
   padding-bottom:56.25%;
 }
-
 .video-frame iframe{
   position:absolute;
-  top:0;
-  left:0;
   width:100%;
   height:100%;
   border-radius:10px;
 }
 
 /* FORM */
-form{
-  display:flex;
-  flex-direction:column;
-}
-
+form{display:flex;flex-direction:column;}
 input,select,textarea{
   padding:12px;
   margin:8px 0;
   border-radius:8px;
   border:1px solid #ddd;
 }
-
 button.submit{
   background:#0A1F44;
   color:white;
@@ -195,21 +163,13 @@ footer{
 #contactModal,#priceModal,#subModal{
 display:none;
 position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
+top:0;left:0;width:100%;height:100%;
 background:rgba(0,0,0,0.5);
-justify-content:center;
-align-items:center;
+justify-content:center;align-items:center;
 }
 
 .modal-box{
-background:white;
-padding:30px;
-border-radius:20px;
-width:360px;
-text-align:center;
+background:white;padding:30px;border-radius:20px;width:360px;text-align:center;
 }
 
 .result{font-size:22px;margin-top:10px;font-weight:bold;}
@@ -229,7 +189,6 @@ text-align:center;
       <small style="color:#6b7280;">Professional Cleaning Services</small>
     </div>
   </div>
-
   <button onclick="openContact()" class="contact-btn">Contact</button>
 </div>
 
@@ -250,10 +209,126 @@ text-align:center;
   </div>
 </div>
 
-<!-- REST OF YOUR CODE REMAINS EXACTLY THE SAME -->
+<!-- SERVICES -->
+<section>
+<h2>Our Services</h2>
+<div class="grid">
+<div class="card"><h3>House Cleaning</h3><p>Full home cleaning services including kitchens and bathrooms.</p></div>
+<div class="card"><h3>End of Tenancy</h3><p>Complete move-out and move-in cleaning solutions.</p></div>
+<div class="card"><h3>Commercial Cleaning</h3><p>Offices, shops, schools and warehouses.</p></div>
+<div class="card"><h3>Deep Cleaning</h3><p>Intensive cleaning and sanitation services.</p></div>
+</div>
+</section>
+
+<!-- GALLERY -->
+<section>
+<h2>Our Work</h2>
+<div class="gallery">
+<img src="Corridor2.jpg.png">
+<img src="MainCorridor.jpg.png">
+<img src="corridor1.jpg.png">
+<img src="Kitchen2.jpg.png">
+<img src="MiniKitchen.jpg.png">
+<img src="Lounge3.jpg.png">
+<img src="lounge.jpg.png">
+<img src="lounge2.jpg.png">
+<img src="Toilet.jpg.png">
+<img src="Toilet2.jpg.png">
+<img src="Toilet3.jpg.png">
+<img src="Hatche.jpg.png">
+</div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+<h2>Book a Cleaning</h2>
+
+<div class="booking-container">
+
+<div class="video-box">
+<h3>See Our Work In Action</h3>
+<div class="video-frame">
+<iframe src="https://www.youtube.com/embed/gLNbjA0x5qQ"></iframe>
+</div>
+</div>
+
+<form action="https://formspree.io/f/xaqlykvq" method="POST">
+<input type="text" name="name" placeholder="Full Name" required>
+<input type="email" name="email" placeholder="Email" required>
+<input type="tel" name="phone" placeholder="Phone Number" required>
+
+<select name="service">
+<option>House Cleaning</option>
+<option>Office Cleaning</option>
+<option>Deep Cleaning</option>
+</select>
+
+<textarea name="details" placeholder="Details"></textarea>
+
+<button class="submit">Book Now</button>
+</form>
+
+<div style="background:white; padding:20px; border-radius:10px;">
+<h3>Advertisement</h3>
+<p>Google Ads space</p>
+</div>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<p>© 2026 Jah'sRock Ltd</p>
+</footer>
+
+<!-- PRICE MODAL -->
+<div id="priceModal">
+<div class="modal-box">
+<h3>Estimate</h3>
+<input id="rooms" type="number" placeholder="Rooms">
+<input id="bathrooms" type="number" placeholder="Bathrooms">
+<input id="toilets" type="number" placeholder="Toilets">
+<button onclick="calculatePrice()" class="contact-btn">Calculate</button>
+<div id="result" class="result"></div>
+<div class="note">Estimate only</div>
+</div>
+</div>
+
+<!-- SUB MODAL -->
+<div id="subModal">
+<div class="modal-box">
+<h3>Subscribe</h3>
+<select id="subscription">
+<option value="0">None</option>
+<option value="0.2">Weekly 20%</option>
+<option value="0.15">Bi-Weekly 15%</option>
+<option value="0.1">Monthly 10%</option>
+</select>
+<button onclick="saveSubscription()" class="contact-btn">Apply</button>
+</div>
+</div>
 
 <script>
-// KEEP YOUR EXISTING JS (unchanged)
+let subscriptionDiscount=0;
+
+function openContact(){document.getElementById("contactModal").style.display="flex";}
+function openPrice(){document.getElementById("priceModal").style.display="flex";}
+function openSub(){document.getElementById("subModal").style.display="flex";}
+
+function saveSubscription(){
+subscriptionDiscount=+document.getElementById("subscription").value;
+alert("Subscription applied");
+}
+
+function calculatePrice(){
+let total=50;
+if(subscriptionDiscount){total=total*(1-subscriptionDiscount);}
+document.getElementById("result").innerText="£"+total;
+}
+
+function scrollToBooking(){
+document.getElementById("booking").scrollIntoView({behavior:"smooth"});
+}
 </script>
 
 </body>
