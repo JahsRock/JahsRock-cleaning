@@ -7,7 +7,7 @@
 
 <style>
 
-/* RESET */
+/* KEEP ALL YOUR ORIGINAL STYLES */
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
@@ -29,17 +29,8 @@ body{
   border-bottom:1px solid rgba(0,0,0,0.05);
 }
 
-.logo{
-  display:flex;
-  align-items:center;
-}
-.logo img{
-  width:50px;
-  height:50px;
-  border-radius:50%;
-  object-fit:cover;
-  margin-right:10px;
-}
+.logo{display:flex;align-items:center;}
+.logo img{width:50px;height:50px;border-radius:50%;margin-right:10px;}
 
 .contact-btn{
   padding:10px 18px;
@@ -51,12 +42,9 @@ body{
 }
 
 /* HERO */
-.hero{
-  text-align:center;
-  padding:50px 20px 30px;
-}
-
+.hero{text-align:center;padding:50px 20px 30px;}
 .hero h1{font-size:40px;}
+.hero p{max-width:650px;margin:10px auto;color:#555;}
 
 .hero button{
   margin:8px;
@@ -68,84 +56,39 @@ body{
   cursor:pointer;
 }
 
-/* SECTION */
-section{
-  padding:40px 20px;
-  text-align:center;
-}
+/* KEEP REST SAME */
+section{padding:40px 20px;text-align:center;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:1100px;margin:auto;}
+.card{background:white;padding:20px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.08);text-align:left;}
 
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
-  max-width:1100px;
-  margin:auto;
-}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;max-width:1000px;margin:auto;}
+.gallery img{width:100%;height:110px;object-fit:cover;border-radius:8px;}
 
-.card{
-  background:white;
-  padding:20px;
-  border-radius:12px;
-}
+.booking-container{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;max-width:1200px;margin:auto;}
 
-/* BOOKING */
-.booking-container{
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:20px;
-  max-width:1200px;
-  margin:auto;
-}
+.video-box{background:white;padding:15px;border-radius:14px;box-shadow:0 10px 25px rgba(0,0,0,0.08);}
+.video-frame{position:relative;padding-bottom:56.25%;height:0;}
+.video-frame iframe{position:absolute;width:100%;height:100%;border-radius:10px;}
 
-form{
-  display:flex;
-  flex-direction:column;
-}
+form{display:flex;flex-direction:column;}
+input,select,textarea{padding:12px;margin:8px 0;border-radius:8px;border:1px solid #ddd;}
+button.submit{background:#0A1F44;color:white;padding:12px;border:none;border-radius:8px;}
 
-input,select,textarea{
-  padding:12px;
-  margin:8px 0;
-  border-radius:8px;
-  border:1px solid #ddd;
-}
-
-button.submit{
-  background:#0A1F44;
-  color:white;
-  padding:12px;
-  border:none;
-}
+footer{background:#0A1F44;color:white;text-align:center;padding:20px;}
 
 /* MODALS */
 #contactModal,#priceModal,#subModal{
-  display:none;
-  position:fixed;
-  top:0;left:0;
-  width:100%;height:100%;
-  background:rgba(0,0,0,0.5);
-  justify-content:center;
-  align-items:center;
+display:none;position:fixed;top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,0.5);justify-content:center;align-items:center;
 }
 
 .modal-box{
-  background:white;
-  padding:30px;
-  border-radius:20px;
-  width:350px;
-  text-align:center;
+background:white;padding:30px;border-radius:20px;width:360px;text-align:center;
 }
 
-.result{
-  margin-top:10px;
-  font-size:22px;
-  font-weight:bold;
-}
+.result{font-size:22px;margin-top:10px;font-weight:bold;}
 
-.note{
-  font-size:12px;
-  color:#666;
-}
+.note{font-size:12px;color:#666;margin-top:10px;}
 
 </style>
 </head>
@@ -156,7 +99,10 @@ button.submit{
 <div class="header">
   <div class="logo">
     <img src="Logo.jpeg">
-    <h3>Jah'sRock Ltd</h3>
+    <div>
+      <h3>Jah'sRock Ltd</h3>
+      <small style="color:#6b7280;">Professional Cleaning Services</small>
+    </div>
   </div>
   <button onclick="openContact()" class="contact-btn">Contact</button>
 </div>
@@ -164,26 +110,63 @@ button.submit{
 <!-- HERO -->
 <div class="hero">
   <h1>Premium Cleaning Services</h1>
+  <p>Reliable, professional, and affordable cleaning services delivering expert clean-up solutions.</p>
+
+  <!-- ADDED BUTTONS ONLY -->
   <button onclick="scrollToBooking()">Book Now</button>
   <button onclick="openPrice()">Get Estimate</button>
   <button onclick="openSub()">Subscribe & Save</button>
+
+  <div class="trust">
+    <div>✔ Fully Insured</div>
+    <div>✔ Reliable</div>
+    <div>✔ Affordable</div>
+    <div>✔ Expert Clean-Up</div>
+  </div>
 </div>
 
 <!-- SERVICES -->
 <section>
 <h2>Our Services</h2>
 <div class="grid">
-<div class="card">House Cleaning</div>
-<div class="card">End of Tenancy</div>
-<div class="card">Commercial Cleaning</div>
-<div class="card">Deep Cleaning</div>
+<div class="card"><h3>House Cleaning</h3><p>Full home cleaning services including kitchens and bathrooms.</p></div>
+<div class="card"><h3>End of Tenancy</h3><p>Complete move-out and move-in cleaning solutions.</p></div>
+<div class="card"><h3>Commercial Cleaning</h3><p>Offices, shops, schools and warehouses.</p></div>
+<div class="card"><h3>Deep Cleaning</h3><p>Intensive cleaning and sanitation services.</p></div>
+</div>
+</section>
+
+<!-- GALLERY -->
+<section>
+<h2>Our Work</h2>
+<div class="gallery">
+<img src="Corridor2.jpg.png">
+<img src="MainCorridor.jpg.png">
+<img src="corridor1.jpg.png">
+<img src="Kitchen2.jpg.png">
+<img src="MiniKitchen.jpg.png">
+<img src="Lounge3.jpg.png">
+<img src="lounge.jpg.png">
+<img src="lounge2.jpg.png">
+<img src="Toilet.jpg.png">
+<img src="Toilet2.jpg.png">
+<img src="Toilet3.jpg.png">
+<img src="Hatche.jpg.png">
 </div>
 </section>
 
 <!-- BOOKING -->
 <section id="booking">
 <h2>Book a Cleaning</h2>
+
 <div class="booking-container">
+
+<div class="video-box">
+<h3>See Our Work In Action</h3>
+<div class="video-frame">
+<iframe src="https://www.youtube.com/embed/gLNbjA0x5qQ"></iframe>
+</div>
+</div>
 
 <form action="https://formspree.io/f/xaqlykvq" method="POST">
 <input type="text" name="name" placeholder="Full Name" required>
@@ -201,6 +184,11 @@ button.submit{
 <button class="submit">Book Now</button>
 </form>
 
+<div style="background:white; padding:20px; border-radius:10px;">
+<h3>Advertisement</h3>
+<p>Google Ads space</p>
+</div>
+
 </div>
 </section>
 
@@ -208,32 +196,33 @@ button.submit{
 <div id="priceModal">
 <div class="modal-box">
 
-<h3>Estimate Cost</h3>
+<h3>Get Estimate</h3>
 
 <input type="number" id="rooms" placeholder="Rooms">
 <input type="number" id="bathrooms" placeholder="Bathrooms">
 <input type="number" id="toilets" placeholder="Toilets">
 
 <select id="size">
-<option value="1">Small</option>
-<option value="1.2">Medium</option>
-<option value="1.5">Large</option>
+<option value="1">Small Property</option>
+<option value="1.2">Medium Property</option>
+<option value="1.5">Large Property</option>
 </select>
 
 <select id="dirt">
 <option value="1">Very Clean</option>
+<option value="3">Average</option>
 <option value="5">Very Dirty</option>
 </select>
 
-<button onclick="calculatePrice()">Calculate</button>
+<button onclick="calculatePrice()" class="contact-btn">Calculate</button>
 
 <div class="result" id="result"></div>
-<div class="note">Estimate only. Final quote may vary.</div>
+<div class="note">*Estimate only. Final price may vary.</div>
 
 </div>
 </div>
 
-<!-- SUBSCRIPTION MODAL -->
+<!-- SUB MODAL -->
 <div id="subModal">
 <div class="modal-box">
 
@@ -246,7 +235,7 @@ button.submit{
 <option value="0.10">Monthly (10% Off)</option>
 </select>
 
-<button onclick="saveSubscription()">Apply</button>
+<button onclick="saveSubscription()" class="contact-btn">Apply</button>
 
 </div>
 </div>
@@ -254,9 +243,9 @@ button.submit{
 <!-- CONTACT MODAL -->
 <div id="contactModal">
 <div class="modal-box">
-<h3>Contact</h3>
-<p>jahsrockcleaning@gmail.com</p>
-<p>078926455527</p>
+<h3>Contact Us</h3>
+<p>📧 jahsrockcleaning@gmail.com</p>
+<p>📱 078926455527</p>
 </div>
 </div>
 
@@ -276,55 +265,46 @@ e.target.style.display="none";
 }
 
 function saveSubscription(){
-let val = document.getElementById("subscription");
-subscriptionDiscount = +val.value;
-subscriptionName = val.options[val.selectedIndex].text;
-document.getElementById("subModal").style.display="none";
-alert("Subscription applied: " + subscriptionName);
+let val=document.getElementById("subscription");
+subscriptionDiscount=+val.value;
+subscriptionName=val.options[val.selectedIndex].text;
+alert("Subscription applied: "+subscriptionName);
 }
 
 function calculatePrice(){
 
-let rooms = +document.getElementById("rooms").value || 0;
-let baths = +document.getElementById("bathrooms").value || 0;
-let toilets = +document.getElementById("toilets").value || 0;
-let size = +document.getElementById("size").value;
-let dirt = +document.getElementById("dirt").value;
+let rooms=+document.getElementById("rooms").value||0;
+let baths=+document.getElementById("bathrooms").value||0;
+let toilets=+document.getElementById("toilets").value||0;
+let size=+document.getElementById("size").value;
+let dirt=+document.getElementById("dirt").value;
 
-let total = 45 + (rooms*13) + (baths*20) + (toilets*12);
+let total=45+(rooms*13)+(baths*20)+(toilets*12);
 
-let dirtMultiplier = 1 + (dirt-1)*0.25;
+let dirtMultiplier=1+(dirt-1)*0.25;
 
-total = total * dirtMultiplier * size;
+total=total*dirtMultiplier*size;
 
-// Apply subscription discount
 if(subscriptionDiscount){
-total = total * (1 - subscriptionDiscount);
+total=total*(1-subscriptionDiscount);
 }
 
-total = Math.round(total / 5) * 5;
+total=Math.round(total/5)*5;
 
-window.estimatedPrice = total;
+window.estimatedPrice=total;
 
-document.getElementById("result").innerText = "£" + total;
-
+document.getElementById("result").innerText="£"+total;
 }
 
 function scrollToBooking(){
-
 document.getElementById("booking").scrollIntoView({behavior:"smooth"});
 
 setTimeout(()=>{
-let textarea = document.querySelector("textarea");
-
+let textarea=document.querySelector("textarea");
 if(window.estimatedPrice){
-textarea.value =
-"Estimated Price: £" + window.estimatedPrice +
-"\nSubscription: " + (subscriptionName || "None");
+textarea.value="Estimated Price: £"+window.estimatedPrice+"\nSubscription: "+(subscriptionName||"None");
 }
-
 },500);
-
 }
 
 </script>
