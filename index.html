@@ -57,14 +57,9 @@ body{
 }
 
 .hero h1{font-size:40px;}
-.hero p{
-  max-width:650px;
-  margin:10px auto;
-  color:#555;
-}
 
 .hero button{
-  margin-top:15px;
+  margin:8px;
   padding:14px 28px;
   border:none;
   border-radius:30px;
@@ -73,28 +68,13 @@ body{
   cursor:pointer;
 }
 
-/* TRUST */
-.trust{
-  margin-top:15px;
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-}
-.trust div{
-  background:white;
-  padding:8px 14px;
-  border-radius:20px;
-  box-shadow:0 5px 10px rgba(0,0,0,0.05);
-}
-
 /* SECTION */
 section{
   padding:40px 20px;
   text-align:center;
 }
 
-/* SERVICES */
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -107,24 +87,6 @@ section{
   background:white;
   padding:20px;
   border-radius:12px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
-  text-align:left;
-}
-
-/* GALLERY */
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(110px,1fr));
-  gap:8px;
-  max-width:1000px;
-  margin:auto;
-}
-.gallery img{
-  width:100%;
-  height:110px;
-  object-fit:cover;
-  border-radius:8px;
-  cursor:pointer;
 }
 
 /* BOOKING */
@@ -136,32 +98,6 @@ section{
   margin:auto;
 }
 
-/* VIDEO BOX (NEW PREMIUM) */
-.video-box{
-  background:white;
-  padding:15px;
-  border-radius:14px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-}
-.video-box h3{
-  margin-bottom:10px;
-}
-.video-frame{
-  position:relative;
-  padding-bottom:56.25%;
-  height:0;
-}
-.video-frame iframe{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  border:0;
-  border-radius:10px;
-}
-
-/* FORM */
 form{
   display:flex;
   flex-direction:column;
@@ -179,32 +115,14 @@ button.submit{
   color:white;
   padding:12px;
   border:none;
-  border-radius:8px;
 }
 
-/* FOOTER */
-footer{
-  background:#0A1F44;
-  color:white;
-  text-align:center;
-  padding:20px;
-}
-
-.socials a{
-  margin:0 10px;
-  font-size:20px;
-  color:white;
-  text-decoration:none;
-}
-
-/* CONTACT MODAL */
-#contactModal{
+/* MODALS */
+#contactModal,#priceModal,#subModal{
   display:none;
   position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
+  top:0;left:0;
+  width:100%;height:100%;
   background:rgba(0,0,0,0.5);
   justify-content:center;
   align-items:center;
@@ -212,10 +130,21 @@ footer{
 
 .modal-box{
   background:white;
-  padding:40px;
+  padding:30px;
   border-radius:20px;
+  width:350px;
   text-align:center;
-  width:380px;
+}
+
+.result{
+  margin-top:10px;
+  font-size:22px;
+  font-weight:bold;
+}
+
+.note{
+  font-size:12px;
+  color:#666;
 }
 
 </style>
@@ -227,74 +156,35 @@ footer{
 <div class="header">
   <div class="logo">
     <img src="Logo.jpeg">
-    <div>
-      <h3>Jah'sRock Ltd</h3>
-      <small style="color:#6b7280;">Professional Cleaning Services</small>
-    </div>
+    <h3>Jah'sRock Ltd</h3>
   </div>
-
   <button onclick="openContact()" class="contact-btn">Contact</button>
 </div>
 
 <!-- HERO -->
 <div class="hero">
   <h1>Premium Cleaning Services</h1>
-  <p>Reliable, professional, and affordable cleaning services delivering expert clean-up solutions.</p>
   <button onclick="scrollToBooking()">Book Now</button>
-
-  <div class="trust">
-    <div>✔ Fully Insured</div>
-    <div>✔ Reliable</div>
-    <div>✔ Affordable</div>
-    <div>✔ Expert Clean-Up</div>
-  </div>
+  <button onclick="openPrice()">Get Estimate</button>
+  <button onclick="openSub()">Subscribe & Save</button>
 </div>
 
 <!-- SERVICES -->
 <section>
 <h2>Our Services</h2>
 <div class="grid">
-<div class="card"><h3>House Cleaning</h3><p>Full home cleaning services including kitchens and bathrooms.</p></div>
-<div class="card"><h3>End of Tenancy</h3><p>Complete move-out and move-in cleaning solutions.</p></div>
-<div class="card"><h3>Commercial Cleaning</h3><p>Offices, shops, schools and warehouses.</p></div>
-<div class="card"><h3>Deep Cleaning</h3><p>Intensive cleaning and sanitation services.</p></div>
-</div>
-</section>
-
-<!-- GALLERY -->
-<section>
-<h2>Our Work</h2>
-<div class="gallery">
-<img src="Corridor2.jpg.png">
-<img src="MainCorridor.jpg.png">
-<img src="corridor1.jpg.png">
-<img src="Kitchen2.jpg.png">
-<img src="MiniKitchen.jpg.png">
-<img src="Lounge3.jpg.png">
-<img src="lounge.jpg.png">
-<img src="lounge2.jpg.png">
-<img src="Toilet.jpg.png">
-<img src="Toilet2.jpg.png">
-<img src="Toilet3.jpg.png">
-<img src="Hatche.jpg.png">
+<div class="card">House Cleaning</div>
+<div class="card">End of Tenancy</div>
+<div class="card">Commercial Cleaning</div>
+<div class="card">Deep Cleaning</div>
 </div>
 </section>
 
 <!-- BOOKING -->
 <section id="booking">
 <h2>Book a Cleaning</h2>
-
 <div class="booking-container">
 
-<!-- VIDEO -->
-<div class="video-box">
-<h3>See Our Work In Action</h3>
-<div class="video-frame">
-<iframe src="https://www.youtube.com/embed/gLNbjA0x5qQ" allowfullscreen></iframe>
-</div>
-</div>
-
-<!-- FORM -->
 <form action="https://formspree.io/f/xaqlykvq" method="POST">
 <input type="text" name="name" placeholder="Full Name" required>
 <input type="email" name="email" placeholder="Email" required>
@@ -311,52 +201,130 @@ footer{
 <button class="submit">Book Now</button>
 </form>
 
-<!-- ADS -->
-<div style="background:white; padding:20px; border-radius:10px;">
-<h3>Advertisement</h3>
-<p>Google Ads space</p>
-</div>
-
 </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-<p>© 2026 Jah'sRock Ltd</p>
-<div class="socials">
-<a href="#">📘</a>
-<a href="#">📸</a>
-<a href="#">𝕏</a>
+<!-- PRICE MODAL -->
+<div id="priceModal">
+<div class="modal-box">
+
+<h3>Estimate Cost</h3>
+
+<input type="number" id="rooms" placeholder="Rooms">
+<input type="number" id="bathrooms" placeholder="Bathrooms">
+<input type="number" id="toilets" placeholder="Toilets">
+
+<select id="size">
+<option value="1">Small</option>
+<option value="1.2">Medium</option>
+<option value="1.5">Large</option>
+</select>
+
+<select id="dirt">
+<option value="1">Very Clean</option>
+<option value="5">Very Dirty</option>
+</select>
+
+<button onclick="calculatePrice()">Calculate</button>
+
+<div class="result" id="result"></div>
+<div class="note">Estimate only. Final quote may vary.</div>
+
 </div>
-</footer>
+</div>
+
+<!-- SUBSCRIPTION MODAL -->
+<div id="subModal">
+<div class="modal-box">
+
+<h3>Subscribe & Save</h3>
+
+<select id="subscription">
+<option value="0">No Subscription</option>
+<option value="0.20">Weekly (20% Off)</option>
+<option value="0.15">Bi-Weekly (15% Off)</option>
+<option value="0.10">Monthly (10% Off)</option>
+</select>
+
+<button onclick="saveSubscription()">Apply</button>
+
+</div>
+</div>
 
 <!-- CONTACT MODAL -->
 <div id="contactModal">
 <div class="modal-box">
-<h3>Contact Us</h3>
-<p>📧 <a href="mailto:jahsrockcleaning@gmail.com">jahsrockcleaning@gmail.com</a></p>
-<p>📱 <a href="tel:078926455527">078926455527</a></p>
-<button onclick="goToBooking()" class="contact-btn">Book Now</button>
+<h3>Contact</h3>
+<p>jahsrockcleaning@gmail.com</p>
+<p>078926455527</p>
 </div>
 </div>
 
 <script>
 
-function openContact(){
-document.getElementById("contactModal").style.display="flex";
+let subscriptionDiscount = 0;
+let subscriptionName = "";
+
+function openContact(){document.getElementById("contactModal").style.display="flex";}
+function openPrice(){document.getElementById("priceModal").style.display="flex";}
+function openSub(){document.getElementById("subModal").style.display="flex";}
+
+window.onclick=function(e){
+if(e.target.id==="contactModal"||e.target.id==="priceModal"||e.target.id==="subModal"){
+e.target.style.display="none";
+}
 }
 
-document.getElementById("contactModal").onclick=function(e){
-if(e.target===this){this.style.display="none";}
+function saveSubscription(){
+let val = document.getElementById("subscription");
+subscriptionDiscount = +val.value;
+subscriptionName = val.options[val.selectedIndex].text;
+document.getElementById("subModal").style.display="none";
+alert("Subscription applied: " + subscriptionName);
 }
 
-function goToBooking(){
-document.getElementById("contactModal").style.display="none";
-document.getElementById("booking").scrollIntoView({behavior:"smooth"});
+function calculatePrice(){
+
+let rooms = +document.getElementById("rooms").value || 0;
+let baths = +document.getElementById("bathrooms").value || 0;
+let toilets = +document.getElementById("toilets").value || 0;
+let size = +document.getElementById("size").value;
+let dirt = +document.getElementById("dirt").value;
+
+let total = 45 + (rooms*13) + (baths*20) + (toilets*12);
+
+let dirtMultiplier = 1 + (dirt-1)*0.25;
+
+total = total * dirtMultiplier * size;
+
+// Apply subscription discount
+if(subscriptionDiscount){
+total = total * (1 - subscriptionDiscount);
+}
+
+total = Math.round(total / 5) * 5;
+
+window.estimatedPrice = total;
+
+document.getElementById("result").innerText = "£" + total;
+
 }
 
 function scrollToBooking(){
+
 document.getElementById("booking").scrollIntoView({behavior:"smooth"});
+
+setTimeout(()=>{
+let textarea = document.querySelector("textarea");
+
+if(window.estimatedPrice){
+textarea.value =
+"Estimated Price: £" + window.estimatedPrice +
+"\nSubscription: " + (subscriptionName || "None");
+}
+
+},500);
+
 }
 
 </script>
