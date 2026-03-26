@@ -3,10 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Jah'sRock Cleaning LTD</title>
-
-<meta name="description" content="Professional cleaning services in Hertfordshire. Reliable, high-quality home and office cleaning.">
+<title>Jah'sRock Cleaning Ltd</title>
 
 <style>
 
@@ -14,7 +11,7 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:-apple-system, sans-serif;
   background:linear-gradient(#f5f7fa,#e9eef5);
   color:#0A1F44;
 }
@@ -26,7 +23,7 @@ body{
   display:flex;
   justify-content:space-between;
   padding:15px 40px;
-  background:rgba(255,255,255,0.9);
+  background:white;
 }
 
 .logo{
@@ -34,16 +31,11 @@ body{
   align-items:center;
 }
 .logo img{
-  width:45px;
-  border-radius:50%;
+  width:50px;
+  height:50px;
+  object-fit:cover;
+  border-radius:50%; /* PERFECT CIRCLE */
   margin-right:10px;
-}
-
-/* NAV */
-.nav a{
-  margin-left:20px;
-  text-decoration:none;
-  color:#0A1F44;
 }
 
 /* HERO */
@@ -52,24 +44,20 @@ body{
   text-align:center;
 }
 
-.hero h1{
-  font-size:42px;
-}
+.hero h1{font-size:40px;}
 
 .hero p{
   max-width:700px;
   margin:20px auto;
-  line-height:1.6;
   color:#555;
 }
 
 .hero button{
-  padding:14px 30px;
-  border:none;
-  border-radius:30px;
+  padding:14px 25px;
   background:#007bff;
   color:white;
-  margin:10px;
+  border:none;
+  border-radius:25px;
   cursor:pointer;
 }
 
@@ -77,23 +65,17 @@ body{
 .trust{
   display:flex;
   justify-content:center;
-  gap:20px;
+  gap:15px;
   flex-wrap:wrap;
-  margin:30px 0;
+  margin:30px;
 }
 .trust div{
   background:white;
-  padding:10px 20px;
+  padding:10px 15px;
   border-radius:20px;
 }
 
-/* SECTION */
-section{
-  padding:60px 20px;
-  text-align:center;
-}
-
-/* GRID */
+/* SERVICES */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -101,68 +83,63 @@ section{
   max-width:1100px;
   margin:auto;
 }
-
 .card{
   background:white;
-  padding:25px;
-  border-radius:15px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  padding:20px;
+  border-radius:12px;
 }
 
 /* GALLERY */
 .gallery{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
   gap:10px;
   max-width:1000px;
   margin:auto;
 }
 .gallery img{
   width:100%;
-  height:150px;
+  height:120px;
   object-fit:cover;
-  border-radius:10px;
-}
-
-/* BOOKING */
-.booking-wrapper{
-  background:white;
-  padding:30px;
-  border-radius:15px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.1);
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-
-input,select,textarea{
-  width:100%;
-  padding:14px;
-  margin-bottom:10px;
-  border-radius:8px;
-  border:1px solid #ddd;
-}
-
-/* BUTTON */
-.submit-btn{
-  width:100%;
-  padding:14px;
-  background:linear-gradient(135deg,#0A1F44,#007bff);
-  color:white;
-  border:none;
   border-radius:10px;
   cursor:pointer;
 }
 
-/* FLOAT */
-.whatsapp{
+/* MODAL */
+#modal{
+  display:none;
   position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  padding:15px;
-  border-radius:50%;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:black;
+  justify-content:center;
+  align-items:center;
+}
+#modal img{
+  max-width:90%;
+  max-height:90%;
+}
+.nav-btn{
+  position:absolute;
+  top:50%;
   color:white;
+  font-size:30px;
+  cursor:pointer;
+}
+.prev{left:20px;}
+.next{right:20px;}
+
+/* BOOKING */
+form{
+  max-width:400px;
+  margin:auto;
+}
+input,select,textarea{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
 }
 
 /* FOOTER */
@@ -172,12 +149,10 @@ footer{
   text-align:center;
   padding:20px;
 }
-
-/* MOBILE */
-@media(max-width:768px){
-  .booking-wrapper{
-    grid-template-columns:1fr;
-  }
+.socials a{
+  margin:0 10px;
+  color:white;
+  font-size:20px;
 }
 
 </style>
@@ -189,156 +164,137 @@ footer{
 <div class="header">
   <div class="logo">
     <img src="Logo.jpeg">
-    <h3>Jah'sRock LTD</h3>
-  </div>
-
-  <div class="nav">
-    <a href="#services">Services</a>
-    <a href="#booking">Book</a>
+    <h3>Jah'sRock Ltd</h3>
   </div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
   <h1>Premium Cleaning Services</h1>
-
-  <p>
-    Jah'sRock Cleaning LTD delivers reliable, high-quality cleaning services across Hertfordshire.
-    We specialise in homes, offices, and deep cleaning — ensuring spotless, hygienic results every time.
-  </p>
-
+  <p>Reliable, professional and affordable cleaning services delivering expert clean-up results every time.</p>
   <button onclick="scrollToBooking()">Book Now</button>
-  <a href="https://wa.me/447892645927"><button>WhatsApp</button></a>
 </div>
 
 <!-- TRUST -->
 <div class="trust">
   <div>✔ Fully Insured</div>
-  <div>✔ Reliable & On Time</div>
-  <div>✔ 100% Satisfaction</div>
+  <div>✔ Reliable</div>
+  <div>✔ Affordability</div>
+  <div>✔ Expert Clean-Up</div>
 </div>
 
 <!-- SERVICES -->
-<section id="services">
-  <h2>Our Services</h2>
+<section>
+  <h2 style="text-align:center;">Our Services</h2>
 
   <div class="grid">
+
     <div class="card">
       <h3>House Cleaning</h3>
-      <p>Regular cleaning, end of tenancy, kitchen & bathroom detailing, and one-off cleans.</p>
+      <p>Regular cleaning, end of tenancy, moving in/out, kitchen and bathroom detailing.</p>
     </div>
 
     <div class="card">
-      <h3>Office Cleaning</h3>
-      <p>Professional office cleaning including sanitisation and flexible scheduling.</p>
+      <h3>Commercial Cleaning</h3>
+      <p>Office cleaning, schools, shops, business premises and warehouse cleaning.</p>
     </div>
 
     <div class="card">
       <h3>Deep Cleaning</h3>
-      <p>Thorough deep cleaning targeting hidden dirt and bacteria.</p>
+      <p>Full deep cleaning including post-construction and detailed sanitation.</p>
     </div>
+
   </div>
 </section>
 
 <!-- GALLERY -->
 <section>
-  <h2>Our Work</h2>
+  <h2 style="text-align:center;">Our Work</h2>
+
   <div class="gallery">
-    <img src="Corridor2.jpg.png">
-    <img src="Kitchen2.jpg.png">
-    <img src="Lounge3.jpg.png">
-    <img src="Toilet.jpg.png">
+    <img src="Corridor2.jpg.png" onclick="openModal(0)">
+    <img src="Kitchen2.jpg.png" onclick="openModal(1)">
+    <img src="Lounge3.jpg.png" onclick="openModal(2)">
+    <img src="Toilet.jpg.png" onclick="openModal(3)">
+    <img src="Toilet2.jpg.png" onclick="openModal(4)">
+    <img src="Toilet3.jpg.png" onclick="openModal(5)">
+    <img src="MainCorridor.jpg.png" onclick="openModal(6)">
+    <img src="MiniKitchen.jpg.png" onclick="openModal(7)">
   </div>
 </section>
+
+<!-- MODAL -->
+<div id="modal">
+  <span class="nav-btn prev" onclick="change(-1)">❮</span>
+  <img id="modalImg">
+  <span class="nav-btn next" onclick="change(1)">❯</span>
+</div>
 
 <!-- BOOKING -->
 <section id="booking">
-  <h2>Book a Cleaning</h2>
+  <h2 style="text-align:center;">Book a Cleaning</h2>
 
-  <div class="booking-wrapper">
+  <form action="https://formspree.io/f/xaqlykvq" method="POST">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
 
-    <!-- FORM -->
-    <form id="bookingForm" action="https://formspree.io/f/xaqlykvq" method="POST">
+    <select name="service">
+      <option>House Cleaning</option>
+      <option>Office Cleaning</option>
+      <option>Deep Cleaning</option>
+    </select>
 
-      <input type="text" name="name" placeholder="Full Name" required>
-      <input type="email" name="email" placeholder="Email" required>
+    <textarea name="details" placeholder="Details"></textarea>
 
-      <select name="service">
-        <option>House Cleaning</option>
-        <option>Office Cleaning</option>
-        <option>Deep Cleaning</option>
-      </select>
-
-      <input type="date" name="date" required>
-      <input type="time" name="time" required>
-
-      <textarea name="details" placeholder="Cleaning details"></textarea>
-
-      <button type="submit" class="submit-btn">Book Now</button>
-
-      <p id="successMsg" style="display:none; color:green;">
-        ✅ Booking sent! We will contact you shortly.
-      </p>
-
-    </form>
-
-    <!-- INFO -->
-    <div style="text-align:left;">
-      <h3>Why Choose Us?</h3>
-      <p>✔ Fully insured & reliable</p>
-      <p>✔ Flexible scheduling</p>
-      <p>✔ Professional cleaners</p>
-      <p>✔ Satisfaction guaranteed</p>
-
-      <hr style="margin:20px 0;">
-
-      <h4>Need quick help?</h4>
-      <p>Message us directly on WhatsApp.</p>
-
-      <a href="https://wa.me/447892645927">
-        <button style="background:#25D366; color:white; padding:10px; border:none; border-radius:8px;">
-          Chat on WhatsApp
-        </button>
-      </a>
-    </div>
-
-  </div>
+    <button type="submit">Book Now</button>
+  </form>
 </section>
 
-<!-- FLOAT -->
-<a href="https://wa.me/447892645927" class="whatsapp">💬</a>
-
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 Jah'sRock Cleaning LTD</p>
+  <p>© 2026 Jah'sRock Cleaning Ltd</p>
+
+  <div class="socials">
+    <a href="#">Facebook</a>
+    <a href="#">Instagram</a>
+    <a href="#">Twitter</a>
+  </div>
 </footer>
 
 <script>
 
+let images=[
+"Corridor2.jpg.png",
+"Kitchen2.jpg.png",
+"Lounge3.jpg.png",
+"Toilet.jpg.png",
+"Toilet2.jpg.png",
+"Toilet3.jpg.png",
+"MainCorridor.jpg.png",
+"MiniKitchen.jpg.png"
+];
+
+let index=0;
+
+function openModal(i){
+  index=i;
+  document.getElementById("modal").style.display="flex";
+  document.getElementById("modalImg").src=images[index];
+}
+
+function change(n){
+  index=(index+n+images.length)%images.length;
+  document.getElementById("modalImg").src=images[index];
+}
+
+document.getElementById("modal").onclick=function(){
+  this.style.display="none";
+}
+
 function scrollToBooking(){
   document.getElementById("booking").scrollIntoView({behavior:"smooth"});
 }
-
-/* FORM SUBMIT */
-const form = document.getElementById("bookingForm");
-
-form.addEventListener("submit", async function(e){
-  e.preventDefault();
-
-  const data = new FormData(form);
-
-  const response = await fetch(form.action,{
-    method:"POST",
-    body:data,
-    headers:{'Accept':'application/json'}
-  });
-
-  if(response.ok){
-    form.reset();
-    document.getElementById("successMsg").style.display="block";
-  }else{
-    alert("Something went wrong");
-  }
-});
 
 </script>
 
