@@ -43,6 +43,7 @@ body{
   margin-right:10px;
 }
 
+/* NAV */
 .nav{
   display:flex;
   gap:25px;
@@ -54,6 +55,7 @@ body{
   font-weight:500;
 }
 
+/* MOBILE MENU */
 .menu-icon{
   display:none;
   font-size:26px;
@@ -103,7 +105,7 @@ section.show{
   transform:translateY(0);
 }
 
-/* CARDS */
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -121,7 +123,6 @@ section.show{
 }
 .card:hover{
   transform:translateY(-8px);
-  box-shadow:0 20px 40px rgba(0,0,0,0.12);
 }
 
 /* GALLERY */
@@ -132,10 +133,34 @@ section.show{
   max-width:1000px;
   margin:auto;
 }
+
 .gallery img{
   width:100%;
   height:150px;
   object-fit:cover;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+.gallery img:hover{
+  transform:scale(1.05);
+}
+
+/* IMAGE MODAL */
+#imageModal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.85);
+  justify-content:center;
+  align-items:center;
+}
+#imageModal img{
+  max-width:90%;
+  max-height:90%;
   border-radius:10px;
 }
 
@@ -146,7 +171,8 @@ form{
   display:flex;
   flex-direction:column;
 }
-input,textarea,select{
+
+input, textarea, select{
   margin:10px 0;
   padding:14px;
   border-radius:8px;
@@ -161,7 +187,7 @@ button.submit{
   cursor:pointer;
 }
 
-/* FLOATING BUTTONS */
+/* FLOAT BUTTONS */
 .whatsapp{
   position:fixed;
   bottom:20px;
@@ -170,7 +196,6 @@ button.submit{
   color:white;
   padding:16px;
   border-radius:50%;
-  font-size:20px;
 }
 
 .book-btn{
@@ -242,16 +267,6 @@ footer{
   <button onclick="scrollToBooking()">Book Now</button>
 </div>
 
-<!-- WHY US -->
-<section>
-  <h2>Why Choose Us</h2>
-  <div class="grid">
-    <div class="card">✔ Fully Insured</div>
-    <div class="card">✔ Trusted Professionals</div>
-    <div class="card">✔ 100% Satisfaction</div>
-  </div>
-</section>
-
 <!-- SERVICES -->
 <section id="services">
   <h2>Services</h2>
@@ -266,9 +281,24 @@ footer{
 <section id="gallery">
   <h2>Our Work</h2>
   <div class="gallery">
-    <img src="corridor1.png">
-    <img src="kitchen.png">
-    <img src="lounge.png">
+
+    <img src="Corridor2.jpg.png" onclick="openImage(this.src)">
+    <img src="MainCorridor.jpg.png" onclick="openImage(this.src)">
+    <img src="corridor1.jpg.png" onclick="openImage(this.src)">
+
+    <img src="Kitchen2.jpg.png" onclick="openImage(this.src)">
+    <img src="MiniKitchen.jpg.png" onclick="openImage(this.src)">
+
+    <img src="Lounge3.jpg.png" onclick="openImage(this.src)">
+    <img src="lounge.jpg.png" onclick="openImage(this.src)">
+    <img src="lounge2.jpg.png" onclick="openImage(this.src)">
+
+    <img src="Toilet.jpg.png" onclick="openImage(this.src)">
+    <img src="Toilet2.jpg.png" onclick="openImage(this.src)">
+    <img src="Toilet3.jpg.png" onclick="openImage(this.src)">
+
+    <img src="Hatche.jpg.png" onclick="openImage(this.src)">
+
   </div>
 </section>
 
@@ -276,24 +306,28 @@ footer{
 <section id="booking">
   <h2>Book a Cleaning</h2>
 
-  <form action="https://formspree.io/f/your-id" method="POST">
-    <input type="text" name="name" placeholder="Full Name" required>
-    <input type="email" name="email" placeholder="Email" required>
+  <form>
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email" required>
 
-    <select name="service">
+    <select>
       <option>House Cleaning</option>
       <option>Office Cleaning</option>
       <option>Deep Cleaning</option>
     </select>
 
-    <input type="date" name="date">
-    <textarea name="details" placeholder="Details"></textarea>
+    <textarea placeholder="Details"></textarea>
 
     <button class="submit">Book Now</button>
   </form>
 </section>
 
-<!-- FLOATING BUTTONS -->
+<!-- IMAGE MODAL -->
+<div id="imageModal" onclick="closeImage()">
+  <img id="modalImg">
+</div>
+
+<!-- FLOAT BUTTONS -->
 <a href="https://wa.me/447892645927" class="whatsapp">💬</a>
 <a href="#booking" class="book-btn">Book Now</a>
 
@@ -303,7 +337,7 @@ footer{
 
 <script>
 
-/* SCROLL ANIMATION */
+/* SCROLL */
 const sections=document.querySelectorAll("section");
 window.addEventListener("scroll",()=>{
   sections.forEach(sec=>{
@@ -313,14 +347,23 @@ window.addEventListener("scroll",()=>{
   });
 });
 
-/* MOBILE MENU */
+/* MENU */
 function toggleMenu(){
   document.getElementById("navMenu").classList.toggle("show");
 }
 
-/* SCROLL */
+/* SCROLL TO BOOK */
 function scrollToBooking(){
   document.getElementById("booking").scrollIntoView({behavior:"smooth"});
+}
+
+/* IMAGE MODAL */
+function openImage(src){
+  document.getElementById("imageModal").style.display="flex";
+  document.getElementById("modalImg").src=src;
+}
+function closeImage(){
+  document.getElementById("imageModal").style.display="none";
 }
 
 </script>
