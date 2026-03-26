@@ -10,6 +10,11 @@
 /* RESET */
 *{margin:0;padding:0;box-sizing:border-box;}
 
+:root{
+  --gold:#D4AF37;
+  --gold-soft:#f5e6a6;
+}
+
 body{
   font-family:-apple-system,sans-serif;
   background:linear-gradient(#f5f7fa,#e9eef5);
@@ -45,9 +50,14 @@ body{
   padding:10px 18px;
   border:none;
   border-radius:25px;
-  background:linear-gradient(135deg,#0A1F44,#007bff);
+  background:linear-gradient(135deg,#0A1F44,var(--gold));
   color:white;
   cursor:pointer;
+  transition:0.3s;
+}
+.contact-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 25px rgba(212,175,55,0.4);
 }
 
 /* HERO */
@@ -56,7 +66,19 @@ body{
   padding:50px 20px 30px;
 }
 
-.hero h1{font-size:40px;}
+.hero h1{
+  font-size:40px;
+  position:relative;
+}
+.hero h1::after{
+  content:"";
+  display:block;
+  width:60px;
+  height:3px;
+  margin:8px auto;
+  background:linear-gradient(90deg,var(--gold),#fff);
+}
+
 .hero p{
   max-width:650px;
   margin:10px auto;
@@ -68,7 +90,7 @@ body{
   padding:14px 28px;
   border:none;
   border-radius:30px;
-  background:linear-gradient(135deg,#0A1F44,#007bff);
+  background:linear-gradient(135deg,#0A1F44,var(--gold));
   color:white;
   cursor:pointer;
 }
@@ -85,13 +107,28 @@ body{
   background:white;
   padding:8px 14px;
   border-radius:20px;
-  box-shadow:0 5px 10px rgba(0,0,0,0.05);
+  border:1px solid rgba(212,175,55,0.3);
+}
+.trust div:hover{
+  background:var(--gold-soft);
 }
 
 /* SECTION */
 section{
   padding:40px 20px;
   text-align:center;
+}
+
+section h2{
+  position:relative;
+}
+section h2::after{
+  content:"";
+  display:block;
+  width:40px;
+  height:3px;
+  margin:6px auto;
+  background:var(--gold);
 }
 
 /* SERVICES */
@@ -109,6 +146,11 @@ section{
   border-radius:12px;
   box-shadow:0 8px 20px rgba(0,0,0,0.08);
   text-align:left;
+  transition:0.3s;
+}
+.card:hover{
+  border:1px solid rgba(212,175,55,0.3);
+  box-shadow:0 10px 30px rgba(212,175,55,0.15);
 }
 
 /* GALLERY */
@@ -136,15 +178,13 @@ section{
   margin:auto;
 }
 
-/* VIDEO BOX (NEW PREMIUM) */
+/* VIDEO */
 .video-box{
   background:white;
   padding:15px;
   border-radius:14px;
+  border:1px solid rgba(212,175,55,0.2);
   box-shadow:0 10px 25px rgba(0,0,0,0.08);
-}
-.video-box h3{
-  margin-bottom:10px;
 }
 .video-frame{
   position:relative;
@@ -153,11 +193,8 @@ section{
 }
 .video-frame iframe{
   position:absolute;
-  top:0;
-  left:0;
   width:100%;
   height:100%;
-  border:0;
   border-radius:10px;
 }
 
@@ -175,7 +212,7 @@ input,select,textarea{
 }
 
 button.submit{
-  background:#0A1F44;
+  background:linear-gradient(135deg,#0A1F44,var(--gold));
   color:white;
   padding:12px;
   border:none;
@@ -194,7 +231,9 @@ footer{
   margin:0 10px;
   font-size:20px;
   color:white;
-  text-decoration:none;
+}
+.socials a:hover{
+  color:var(--gold);
 }
 
 /* CONTACT MODAL */
@@ -216,6 +255,7 @@ footer{
   border-radius:20px;
   text-align:center;
   width:380px;
+  border:1px solid rgba(212,175,55,0.3);
 }
 
 </style>
@@ -286,7 +326,6 @@ footer{
 
 <div class="booking-container">
 
-<!-- VIDEO -->
 <div class="video-box">
 <h3>See Our Work In Action</h3>
 <div class="video-frame">
@@ -294,7 +333,6 @@ footer{
 </div>
 </div>
 
-<!-- FORM -->
 <form action="https://formspree.io/f/xaqlykvq" method="POST">
 <input type="text" name="name" placeholder="Full Name" required>
 <input type="email" name="email" placeholder="Email" required>
@@ -311,7 +349,6 @@ footer{
 <button class="submit">Book Now</button>
 </form>
 
-<!-- ADS -->
 <div style="background:white; padding:20px; border-radius:10px;">
 <h3>Advertisement</h3>
 <p>Google Ads space</p>
