@@ -31,7 +31,6 @@ body{
   padding:15px 40px;
   background:rgba(255,255,255,0.85);
   backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(0,0,0,0.05);
 }
 
 .logo{
@@ -42,7 +41,6 @@ body{
   width:50px;
   height:50px;
   border-radius:50%;
-  object-fit:cover;
   margin-right:10px;
 }
 
@@ -52,12 +50,6 @@ body{
   border-radius:25px;
   background:linear-gradient(135deg,#0A1F44,var(--gold));
   color:white;
-  cursor:pointer;
-  transition:0.3s;
-}
-.contact-btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 8px 25px rgba(212,175,55,0.4);
 }
 
 /* HERO */
@@ -79,28 +71,12 @@ body{
   background:linear-gradient(90deg,var(--gold),#fff);
 }
 
-.hero p{
-  max-width:650px;
-  margin:10px auto;
-  color:#555;
-}
-
-.hero button{
-  margin-top:15px;
-  padding:14px 28px;
-  border:none;
-  border-radius:30px;
-  background:linear-gradient(135deg,#0A1F44,var(--gold));
-  color:white;
-  cursor:pointer;
-}
-
 /* TRUST */
 .trust{
-  margin-top:15px;
   display:flex;
   justify-content:center;
-  gap:12px;
+  gap:10px;
+  margin-top:10px;
   flex-wrap:wrap;
 }
 .trust div{
@@ -109,34 +85,13 @@ body{
   border-radius:20px;
   border:1px solid rgba(212,175,55,0.3);
 }
-.trust div:hover{
-  background:var(--gold-soft);
-}
-
-/* SECTION */
-section{
-  padding:40px 20px;
-  text-align:center;
-}
-
-section h2{
-  position:relative;
-}
-section h2::after{
-  content:"";
-  display:block;
-  width:40px;
-  height:3px;
-  margin:6px auto;
-  background:var(--gold);
-}
 
 /* SERVICES */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:20px;
-  max-width:1100px;
+  max-width:1000px;
   margin:auto;
 }
 
@@ -144,13 +99,6 @@ section h2::after{
   background:white;
   padding:20px;
   border-radius:12px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
-  text-align:left;
-  transition:0.3s;
-}
-.card:hover{
-  border:1px solid rgba(212,175,55,0.3);
-  box-shadow:0 10px 30px rgba(212,175,55,0.15);
 }
 
 /* GALLERY */
@@ -158,15 +106,11 @@ section h2::after{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(110px,1fr));
   gap:8px;
-  max-width:1000px;
-  margin:auto;
 }
 .gallery img{
   width:100%;
   height:110px;
   object-fit:cover;
-  border-radius:8px;
-  cursor:pointer;
 }
 
 /* BOOKING */
@@ -184,8 +128,8 @@ section h2::after{
   padding:15px;
   border-radius:14px;
   border:1px solid rgba(212,175,55,0.2);
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
+
 .video-frame{
   position:relative;
   padding-bottom:56.25%;
@@ -195,7 +139,6 @@ section h2::after{
   position:absolute;
   width:100%;
   height:100%;
-  border-radius:10px;
 }
 
 /* FORM */
@@ -203,20 +146,9 @@ form{
   display:flex;
   flex-direction:column;
 }
-
 input,select,textarea{
-  padding:12px;
   margin:8px 0;
-  border-radius:8px;
-  border:1px solid #ddd;
-}
-
-button.submit{
-  background:linear-gradient(135deg,#0A1F44,var(--gold));
-  color:white;
-  padding:12px;
-  border:none;
-  border-radius:8px;
+  padding:10px;
 }
 
 /* FOOTER */
@@ -227,35 +159,20 @@ footer{
   padding:20px;
 }
 
-.socials a{
-  margin:0 10px;
-  font-size:20px;
-  color:white;
-}
-.socials a:hover{
-  color:var(--gold);
-}
-
-/* CONTACT MODAL */
+/* MODAL */
 #contactModal{
   display:none;
   position:fixed;
-  top:0;
-  left:0;
   width:100%;
   height:100%;
   background:rgba(0,0,0,0.5);
   justify-content:center;
   align-items:center;
 }
-
 .modal-box{
   background:white;
   padding:40px;
   border-radius:20px;
-  text-align:center;
-  width:380px;
-  border:1px solid rgba(212,175,55,0.3);
 }
 
 </style>
@@ -269,7 +186,7 @@ footer{
     <img src="Logo.jpeg">
     <div>
       <h3>Jah'sRock Ltd</h3>
-      <small style="color:#6b7280;">Professional Cleaning Services</small>
+      <small>Professional Cleaning Services</small>
     </div>
   </div>
 
@@ -279,8 +196,6 @@ footer{
 <!-- HERO -->
 <div class="hero">
   <h1>Premium Cleaning Services</h1>
-  <p>Reliable, professional, and affordable cleaning services delivering expert clean-up solutions.</p>
-  <button onclick="scrollToBooking()">Book Now</button>
 
   <div class="trust">
     <div>✔ Fully Insured</div>
@@ -294,10 +209,10 @@ footer{
 <section>
 <h2>Our Services</h2>
 <div class="grid">
-<div class="card"><h3>House Cleaning</h3><p>Full home cleaning services including kitchens and bathrooms.</p></div>
-<div class="card"><h3>End of Tenancy</h3><p>Complete move-out and move-in cleaning solutions.</p></div>
-<div class="card"><h3>Commercial Cleaning</h3><p>Offices, shops, schools and warehouses.</p></div>
-<div class="card"><h3>Deep Cleaning</h3><p>Intensive cleaning and sanitation services.</p></div>
+<div class="card">House Cleaning</div>
+<div class="card">End of Tenancy</div>
+<div class="card">Commercial Cleaning</div>
+<div class="card">Deep Cleaning</div>
 </div>
 </section>
 
@@ -307,16 +222,8 @@ footer{
 <div class="gallery">
 <img src="Corridor2.jpg.png">
 <img src="MainCorridor.jpg.png">
-<img src="corridor1.jpg.png">
 <img src="Kitchen2.jpg.png">
-<img src="MiniKitchen.jpg.png">
 <img src="Lounge3.jpg.png">
-<img src="lounge.jpg.png">
-<img src="lounge2.jpg.png">
-<img src="Toilet.jpg.png">
-<img src="Toilet2.jpg.png">
-<img src="Toilet3.jpg.png">
-<img src="Hatche.jpg.png">
 </div>
 </section>
 
@@ -326,30 +233,33 @@ footer{
 
 <div class="booking-container">
 
+<!-- VIDEO -->
 <div class="video-box">
-<h3>See Our Work In Action</h3>
+<h3>✨ See Our Professional Results</h3>
 <div class="video-frame">
-<iframe src="https://www.youtube.com/embed/gLNbjA0x5qQ" allowfullscreen></iframe>
+<iframe 
+src="https://www.youtube.com/embed/gLNbjA0x5qQ?rel=0&modestbranding=1&controls=1"
+allowfullscreen>
+</iframe>
 </div>
 </div>
 
+<!-- FORM -->
 <form action="https://formspree.io/f/xaqlykvq" method="POST">
-<input type="text" name="name" placeholder="Full Name" required>
-<input type="email" name="email" placeholder="Email" required>
-<input type="tel" name="phone" placeholder="Phone Number" required>
-
-<select name="service">
+<input type="text" placeholder="Full Name" required>
+<input type="email" placeholder="Email" required>
+<input type="tel" placeholder="Phone Number" required>
+<select>
 <option>House Cleaning</option>
 <option>Office Cleaning</option>
 <option>Deep Cleaning</option>
 </select>
-
-<textarea name="details" placeholder="Details"></textarea>
-
-<button class="submit">Book Now</button>
+<textarea placeholder="Details"></textarea>
+<button>Book Now</button>
 </form>
 
-<div style="background:white; padding:20px; border-radius:10px;">
+<!-- ADS -->
+<div>
 <h3>Advertisement</h3>
 <p>Google Ads space</p>
 </div>
@@ -360,42 +270,26 @@ footer{
 <!-- FOOTER -->
 <footer>
 <p>© 2026 Jah'sRock Ltd</p>
-<div class="socials">
-<a href="#">📘</a>
-<a href="#">📸</a>
-<a href="#">𝕏</a>
-</div>
 </footer>
 
 <!-- CONTACT MODAL -->
 <div id="contactModal">
 <div class="modal-box">
-<h3>Contact Us</h3>
-<p>📧 <a href="mailto:jahsrockcleaning@gmail.com">jahsrockcleaning@gmail.com</a></p>
-<p>📱 <a href="tel:078926455527">078926455527</a></p>
-<button onclick="goToBooking()" class="contact-btn">Book Now</button>
+<h3>Contact</h3>
+<p>📧 jahsrockcleaning@gmail.com</p>
+<p>📱 078926455527</p>
+<button onclick="goToBooking()">Book Now</button>
 </div>
 </div>
 
 <script>
-
 function openContact(){
 document.getElementById("contactModal").style.display="flex";
 }
-
-document.getElementById("contactModal").onclick=function(e){
-if(e.target===this){this.style.display="none";}
-}
-
 function goToBooking(){
 document.getElementById("contactModal").style.display="none";
 document.getElementById("booking").scrollIntoView({behavior:"smooth"});
 }
-
-function scrollToBooking(){
-document.getElementById("booking").scrollIntoView({behavior:"smooth"});
-}
-
 </script>
 
 </body>
