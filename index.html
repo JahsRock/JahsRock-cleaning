@@ -3,251 +3,269 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jah'sRock Ltd | Professional Cleaning Services</title>
+<title>Jah'sRock Ltd | Cleaning Services</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-  font-family:-apple-system,sans-serif;
-  background:linear-gradient(#f5f7fa,#e9eef5);
-  color:#0A1F44;
+font-family:Arial,sans-serif;
+background:#f5f7fa;
+color:#0A1F44;
 }
 
+/* HEADER */
 .header{
-  position:sticky;
-  top:0;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 40px;
-  background:rgba(255,255,255,0.85);
-  backdrop-filter:blur(12px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 20px;
+background:white;
+flex-wrap:wrap;
 }
 
 .logo{display:flex;align-items:center;}
-.logo img{width:50px;height:50px;border-radius:50%;margin-right:10px;}
+.logo img{width:45px;height:45px;border-radius:50%;margin-right:10px;}
 
-.contact-btn{
-  padding:10px 18px;
-  border:none;
-  border-radius:25px;
-  background:linear-gradient(135deg,#0A1F44,#007bff);
-  color:white;
-  cursor:pointer;
+.nav{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
 }
 
-.hero{text-align:center;padding:50px 20px;}
-.hero h1{font-size:42px;}
-.hero p{max-width:650px;margin:10px auto;color:#555;}
+.nav a{
+padding:10px 14px;
+background:#0A1F44;
+color:white;
+text-decoration:none;
+border-radius:6px;
+font-size:14px;
+}
+
+.contact-info a{
+color:#0A1F44;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* BREADCRUMB */
+.breadcrumb{
+padding:10px 20px;
+background:#eef2f7;
+font-size:14px;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:40px 20px;
+}
+
+.hero h1{font-size:32px;}
 
 .hero button{
-  margin:8px;
-  padding:14px 28px;
-  border:none;
-  border-radius:30px;
-  background:linear-gradient(135deg,#0A1F44,#007bff);
-  color:white;
+margin:8px;
+padding:12px 20px;
+border:none;
+border-radius:25px;
+background:#0A1F44;
+color:white;
 }
 
-.trust{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin-top:15px;
+/* SPLIT SECTION */
+.split{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+padding:40px 20px;
 }
 
-.trust div{
-  background:white;
-  padding:8px 14px;
-  border-radius:20px;
-  font-size:14px;
+.split img{
+width:100%;
+border-radius:10px;
 }
 
-section{padding:40px 20px;text-align:center;}
+.clean-list li{
+list-style:"✔ ";
+margin-bottom:6px;
+}
 
+/* SERVICES GRID */
 .grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
-  max-width:1100px;
-  margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:20px;
 }
 
 .card{
-  background:white;
-  padding:20px;
-  border-radius:12px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
-  text-align:left;
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
 
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(110px,1fr));
-  gap:8px;
-  max-width:1000px;
-  margin:auto;
-}
-.gallery img{
-  width:100%;
-  height:110px;
-  object-fit:cover;
-  border-radius:8px;
+/* BOOKING */
+.booking{
+padding:40px 20px;
 }
 
-.booking-container{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-  max-width:1000px;
-  margin:auto;
+form{
+display:flex;
+flex-direction:column;
+max-width:500px;
+margin:auto;
 }
 
-.video-frame{
-  position:relative;
-  padding-bottom:56.25%;
-}
-.video-frame iframe{
-  position:absolute;
-  width:100%;
-  height:100%;
-}
-
-form{display:flex;flex-direction:column;}
 input,select,textarea{
-  padding:12px;
-  margin:8px 0;
-  border-radius:8px;
-  border:1px solid #ddd;
+padding:10px;
+margin:8px 0;
+border-radius:6px;
+border:1px solid #ccc;
 }
 
 button.submit{
-  background:#0A1F44;
-  color:white;
-  padding:12px;
-  border:none;
-  border-radius:8px;
+background:#0A1F44;
+color:white;
+padding:12px;
+border:none;
+border-radius:6px;
 }
 
+/* FOOTER */
 footer{
-  background:#0A1F44;
-  color:white;
-  text-align:center;
-  padding:20px;
+background:#0A1F44;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:20px;
 }
 
-.modal{
-display:none;
-position:fixed;
-top:0;left:0;width:100%;height:100%;
-background:rgba(0,0,0,0.5);
-justify-content:center;align-items:center;
-}
-
-.modal-box{
-background:white;padding:30px;border-radius:20px;width:350px;text-align:center;
+/* MOBILE */
+@media(max-width:768px){
+.split{grid-template-columns:1fr;}
+.nav{justify-content:center;}
+.header{flex-direction:column;gap:10px;}
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <div class="header">
   <div class="logo">
     <img src="logo.jpeg">
-    <div>
-      <h3>Jah'sRock Ltd</h3>
-      <small>Professional Cleaning Services</small>
-    </div>
+    <h3>Jah'sRock Ltd</h3>
   </div>
-  <button onclick="openContact()" class="contact-btn">Contact</button>
+
+  <div class="nav">
+    <a href="#">Home</a>
+    <a href="#services">Services</a>
+    <a href="#booking">Book</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <div class="contact-info">
+    <a href="tel:+447000000000">📞 Call Now</a>
+  </div>
 </div>
 
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+Home / Services / Regular Cleaning
+</div>
+
+<!-- HERO -->
 <div class="hero">
-  <h1>Premium Cleaning Services</h1>
-  <p>Professional domestic and commercial cleaning services you can trust.</p>
-
-  <button onclick="scrollToBooking()">Book Now</button>
-  <button onclick="openPrice()">Get Estimate</button>
-
-  <div class="trust">
-    <div>✔ Fully Insured</div>
-    <div>✔ Reliable</div>
-    <div>✔ Affordable</div>
-  </div>
+<h1>Professional Cleaning Services</h1>
+<p>Reliable, affordable and fully insured cleaning tailored to your needs.</p>
+<button onclick="scrollToBooking()">Book Now</button>
+<button onclick="openPrice()">Get Estimate</button>
 </div>
 
-<section>
-<h2>Why Choose Us</h2>
-<div class="grid">
-<div class="card">Fully vetted & insured cleaners</div>
-<div class="card">Flexible weekly or fortnightly cleaning</div>
-<div class="card">Disinfecting included at no extra cost</div>
-<div class="card">Professional & reliable service</div>
-</div>
-</section>
+<!-- MAIN SECTION -->
+<div class="split">
+<div>
+<h2>Regular Cleaning</h2>
 
-<section>
-<h2>Our Services</h2>
+<p><strong>Jah'sRock Ltd</strong> provides professional, fully vetted cleaners delivering high-quality cleaning services.</p>
+
+<h3>Weekly or Fortnightly Cleaning</h3>
+<p>Flexible cleaning plans to suit your needs.</p>
+
+<ul class="clean-list">
+<li>Vacuuming all rooms</li>
+<li>Mopping floors</li>
+<li>Cleaning bathrooms & toilets</li>
+<li>Kitchen cleaning</li>
+<li>Dusting furniture</li>
+<li>Glass & mirrors</li>
+</ul>
+
+<p><strong>From £21.90/hour</strong></p>
+
+</div>
+
+<div>
+<img src="cleaning.jpg">
+</div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+<h2 style="text-align:center;">Our Services</h2>
 <div class="grid">
 
 <div class="card">
 <h3>Regular Cleaning</h3>
-<ul>
-<li>Vacuuming & mopping</li>
-<li>Kitchen & bathroom cleaning</li>
-<li>Dusting & polishing</li>
-<li>Waste disposal</li>
-</ul>
-<p><strong>From £21.90/hour</strong></p>
+<p>Weekly or fortnightly home cleaning.</p>
 </div>
 
 <div class="card">
 <h3>Deep Cleaning</h3>
-<p>Intensive cleaning and full sanitation of your property.</p>
+<p>Full intensive cleaning service.</p>
 </div>
 
 <div class="card">
 <h3>Commercial Cleaning</h3>
-<p>Offices, shops, and workspaces.</p>
+<p>Offices and business spaces.</p>
 </div>
 
 <div class="card">
 <h3>Extra Services</h3>
-<p>Ironing and disinfecting available on request.</p>
+<p>Ironing & disinfecting included.</p>
 </div>
 
 </div>
 </section>
 
-<section>
-<h2>Our Work</h2>
-<div class="gallery">
-<img src="corridor2.png">
-<img src="kitchen.png">
-<img src="toilet.png">
-<img src="lounge.png">
-</div>
-</section>
-
-<section id="booking">
-<h2>Book a Cleaning</h2>
-
-<div class="booking-container">
-
-<div class="video-frame">
-<iframe src="https://www.youtube.com/embed/gLNbjA0x5qQ"></iframe>
-</div>
+<!-- BOOKING -->
+<section id="booking" class="booking">
+<h2 style="text-align:center;">Book a Cleaning</h2>
 
 <form action="https://formspree.io/f/xaqlykvq" method="POST">
+
 <input type="text" name="name" placeholder="Full Name" required>
 <input type="email" name="email" placeholder="Email" required>
+<input type="tel" name="phone" placeholder="Phone Number" required>
 
 <select name="service">
 <option>House Cleaning</option>
 <option>Office Cleaning</option>
 <option>Deep Cleaning</option>
+</select>
+
+<label>Select Date</label>
+<input type="date" name="date" required>
+
+<label>Select Time</label>
+<select name="time">
+<option>8:00 AM</option>
+<option>10:00 AM</option>
+<option>12:00 PM</option>
+<option>2:00 PM</option>
+<option>4:00 PM</option>
 </select>
 
 <select name="frequency">
@@ -257,54 +275,47 @@ background:white;padding:30px;border-radius:20px;width:350px;text-align:center;
 <option>Monthly (10% off)</option>
 </select>
 
-<textarea name="details" placeholder="Details"></textarea>
+<textarea name="details" placeholder="Additional details"></textarea>
 
 <button class="submit">Book Now</button>
-</form>
 
-</div>
+</form>
 </section>
 
-<footer>
+<!-- FOOTER -->
+<footer id="contact">
+<p>📞 07XXX XXX XXX | 💬 WhatsApp Available</p>
 <p>© 2026 Jah'sRock Ltd</p>
 </footer>
 
-<!-- CONTACT MODAL -->
-<div id="contactModal" class="modal">
-<div class="modal-box">
-<h3>Contact Us</h3>
-<a href="tel:+447000000000">📞 Call Now</a><br><br>
-<a href="https://wa.me/447000000000">💬 WhatsApp</a>
-</div>
-</div>
-
 <!-- PRICE MODAL -->
-<div id="priceModal" class="modal">
-<div class="modal-box">
+<div id="priceModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);justify-content:center;align-items:center;">
+<div style="background:white;padding:20px;border-radius:10px;">
 <h3>Estimate</h3>
 <input id="rooms" type="number" placeholder="Rooms">
 <input id="bathrooms" type="number" placeholder="Bathrooms">
 <input id="toilets" type="number" placeholder="Toilets">
-<button onclick="calculatePrice()" class="contact-btn">Calculate</button>
+<button onclick="calculatePrice()">Calculate</button>
 <div id="result"></div>
 </div>
 </div>
 
 <script>
-function openContact(){document.getElementById("contactModal").style.display="flex";}
-function openPrice(){document.getElementById("priceModal").style.display="flex";}
-
-function calculatePrice(){
-let rooms = +document.getElementById("rooms").value || 0;
-let bathrooms = +document.getElementById("bathrooms").value || 0;
-let toilets = +document.getElementById("toilets").value || 0;
-
-let total = 20 + (rooms*10) + (bathrooms*8) + (toilets*5);
-document.getElementById("result").innerText = "£" + total;
-}
-
 function scrollToBooking(){
 document.getElementById("booking").scrollIntoView({behavior:"smooth"});
+}
+
+function openPrice(){
+document.getElementById("priceModal").style.display="flex";
+}
+
+function calculatePrice(){
+let rooms=+document.getElementById("rooms").value||0;
+let bathrooms=+document.getElementById("bathrooms").value||0;
+let toilets=+document.getElementById("toilets").value||0;
+
+let total=20+(rooms*10)+(bathrooms*8)+(toilets*5);
+document.getElementById("result").innerText="£"+total;
 }
 </script>
 
