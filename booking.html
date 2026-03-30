@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Book Cleaning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{font-family:Arial;margin:0;background:#f5f7fa;}
+.header{display:flex;justify-content:space-between;padding:15px;background:white;}
+.nav a{margin:5px;background:#0A1F44;color:white;padding:10px;text-decoration:none;border-radius:6px;}
+form{max-width:500px;margin:40px auto;display:flex;flex-direction:column;}
+input,select{margin:8px 0;padding:10px;border-radius:6px;border:1px solid #ccc;}
+button{padding:12px;background:#0A1F44;color:white;border:none;border-radius:6px;}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<h3>Book Cleaning</h3>
+
+<div class="nav">
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="booking.html">Book</a>
+<a href="faq.html">FAQ</a>
+</div>
+</div>
+
+<form action="https://formspree.io/f/xaqlykvq" method="POST">
+<input type="text" name="name" placeholder="Name" required>
+<input type="email" name="email" placeholder="Email" required>
+
+<select name="service">
+<option>House Cleaning</option>
+<option>Office Cleaning</option>
+</select>
+
+<input type="date" required>
+
+<select>
+<option>8AM</option>
+<option>10AM</option>
+<option>12PM</option>
+</select>
+
+<button>Book Now</button>
+</form>
+
+</body>
+</html>
