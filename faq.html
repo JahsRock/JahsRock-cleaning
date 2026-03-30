@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FAQ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{font-family:Arial;margin:0;background:#f5f7fa;}
+.header{display:flex;justify-content:space-between;padding:15px;background:white;}
+.nav a{margin:5px;background:#0A1F44;color:white;padding:10px;text-decoration:none;border-radius:6px;}
+.faq{padding:20px;}
+.item{background:white;margin:10px;padding:15px;border-radius:8px;cursor:pointer;}
+.answer{display:none;padding-top:10px;}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<h3>FAQ</h3>
+
+<div class="nav">
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="booking.html">Book</a>
+<a href="faq.html">FAQ</a>
+</div>
+</div>
+
+<div class="faq">
+
+<div class="item">
+<strong>What areas do you cover?</strong>
+<div class="answer">London and surrounding areas.</div>
+</div>
+
+<div class="item">
+<strong>Are you insured?</strong>
+<div class="answer">Yes fully insured.</div>
+</div>
+
+</div>
+
+<script>
+document.querySelectorAll(".item").forEach(i=>{
+i.onclick=()=> {
+let a=i.querySelector(".answer");
+a.style.display=a.style.display==="block"?"none":"block";
+};
+});
+</script>
+
+</body>
+</html>
