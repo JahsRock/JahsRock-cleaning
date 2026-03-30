@@ -31,9 +31,14 @@ border-radius:6px;
 text-decoration:none;
 }
 
+.contact-info{
+text-align:right;
+font-size:14px;
+}
+
 /* HERO */
 .hero{text-align:center;padding:40px;}
-.hero h1{font-size:32px;}
+.hero h1{font-size:32px;margin-bottom:10px;}
 .hero button{
 margin:8px;
 padding:12px 20px;
@@ -41,6 +46,7 @@ border:none;
 border-radius:25px;
 background:#0A1F44;
 color:white;
+cursor:pointer;
 }
 
 /* SPLIT */
@@ -114,6 +120,13 @@ transition:max-height 0.4s ease;
 padding:0 15px;
 }
 
+/* CONTACT */
+.contact-section{
+background:white;
+padding:40px;
+text-align:center;
+}
+
 /* FOOTER */
 footer{
 background:#0A1F44;
@@ -137,11 +150,13 @@ justify-content:center;
 border-radius:50%;
 font-size:26px;
 text-decoration:none;
+z-index:999;
 }
 
 /* MOBILE */
 @media(max-width:768px){
 .split{grid-template-columns:1fr;}
+.contact-info{text-align:left;margin-top:10px;}
 }
 </style>
 </head>
@@ -161,6 +176,11 @@ text-decoration:none;
 <a href="#booking">Book</a>
 <a href="#faq">FAQ</a>
 </div>
+
+<div class="contact-info">
+<a href="tel:07386548346">📞 07386 548346</a><br>
+<a href="mailto:jahsrockcleaning@gmail.com">✉️ Email</a>
+</div>
 </div>
 
 <!-- HERO -->
@@ -175,10 +195,11 @@ text-decoration:none;
 <div>
 <h2>Regular Cleaning</h2>
 <ul class="clean-list">
-<li>Vacuuming</li>
-<li>Mopping</li>
-<li>Bathrooms</li>
+<li>Vacuuming all rooms</li>
+<li>Mopping floors</li>
+<li>Bathroom cleaning</li>
 <li>Kitchen cleaning</li>
+<li>Dusting & surfaces</li>
 </ul>
 </div>
 <div>
@@ -199,11 +220,11 @@ text-decoration:none;
 
 <!-- REVIEWS -->
 <section>
-<h2 style="text-align:center;">Reviews</h2>
+<h2 style="text-align:center;">Customer Reviews</h2>
 <div class="grid">
-<div class="card">⭐⭐⭐⭐⭐ Great service!</div>
-<div class="card">⭐⭐⭐⭐⭐ Highly recommended</div>
-<div class="card">⭐⭐⭐⭐⭐ Very professional</div>
+<div class="card">⭐⭐⭐⭐⭐ Excellent service and very reliable!</div>
+<div class="card">⭐⭐⭐⭐⭐ My house looks amazing every time.</div>
+<div class="card">⭐⭐⭐⭐⭐ Professional and affordable.</div>
 </div>
 </section>
 
@@ -212,12 +233,16 @@ text-decoration:none;
 <h2 style="text-align:center;">Book a Cleaning</h2>
 
 <form action="https://formspree.io/f/xaqlykvq" method="POST">
-<input type="text" name="name" placeholder="Name" required>
+<input type="hidden" name="_subject" value="New Cleaning Booking Request">
+
+<input type="text" name="name" placeholder="Full Name" required>
 <input type="email" name="email" placeholder="Email" required>
+<input type="tel" name="phone" placeholder="Phone Number" required>
 
 <select name="service">
 <option>House Cleaning</option>
 <option>Office Cleaning</option>
+<option>Deep Cleaning</option>
 </select>
 
 <input type="date" name="date" required>
@@ -226,7 +251,10 @@ text-decoration:none;
 <option>8AM</option>
 <option>10AM</option>
 <option>12PM</option>
+<option>2PM</option>
 </select>
+
+<textarea name="details" placeholder="Additional details"></textarea>
 
 <button class="submit">Book Now</button>
 </form>
@@ -234,30 +262,80 @@ text-decoration:none;
 
 <!-- FAQ -->
 <section id="faq">
-<h2 style="text-align:center;">FAQ</h2>
+<h2 style="text-align:center;">Frequently Asked Questions</h2>
 <div id="faq-container"></div>
 </section>
 
+<!-- CONTACT -->
+<div class="contact-section">
+<h2>Contact Us</h2>
+
+<p><strong>Phone:</strong> 
+<a href="tel:07386548346">07386 548346</a></p>
+
+<p><strong>Email:</strong> 
+<a href="mailto:jahsrockcleaning@gmail.com">
+jahsrockcleaning@gmail.com</a></p>
+
+<br>
+
+<a href="https://wa.me/447386548346" style="
+background:#25D366;
+color:white;
+padding:12px 20px;
+border-radius:6px;
+text-decoration:none;">
+💬 Chat on WhatsApp
+</a>
+</div>
+
 <!-- FOOTER -->
 <footer>
+<p>📞 07386 548346</p>
+<p>✉️ jahsrockcleaning@gmail.com</p>
 <p>© 2026 Jah'sRock Ltd</p>
 </footer>
 
-<!-- WHATSAPP -->
-<a href="https://wa.me/447XXXXXXXXX" class="whatsapp">💬</a>
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/447386548346" class="whatsapp">💬</a>
 
 <script>
 function scrollToBooking(){
 document.getElementById("booking").scrollIntoView({behavior:"smooth"});
 }
 
-/* FAQ DATA */
+/* FAQ DATA (EXPANDABLE) */
 const faqs=[
-"What areas do you cover?|London and surrounding areas.",
-"Are you insured?|Yes fully insured.",
-"How do I book?|Use booking form below.",
+"What areas do you cover?|We cover London and surrounding areas.",
+"Are you insured?|Yes, we are fully insured.",
+"Do you bring cleaning supplies?|Yes, we bring all equipment.",
+"How do I book?|Use our booking form or WhatsApp.",
+"Do you offer deep cleaning?|Yes we do.",
 "Do you clean offices?|Yes.",
-"Do you bring supplies?|Yes."
+"Can I schedule weekly cleaning?|Yes.",
+"What if I cancel?|Contact us 24hrs before.",
+"Do you clean carpets?|Yes.",
+"Do you clean after builders?|Yes.",
+"Do you clean ovens?|Yes.",
+"Do you do ironing?|Yes.",
+"Do you disinfect?|Yes.",
+"Are your cleaners vetted?|Yes.",
+"Do you offer one-off cleaning?|Yes.",
+"Do you do end of tenancy?|Yes.",
+"Do you work weekends?|Yes.",
+"Do you charge hourly?|Depends on job.",
+"Do you clean bathrooms?|Yes.",
+"Do you clean kitchens?|Yes.",
+"Do you mop floors?|Yes.",
+"Do you vacuum?|Yes.",
+"Can I request same cleaner?|Yes.",
+"Do you offer emergency cleaning?|Yes.",
+"Do you clean commercial spaces?|Yes.",
+"Do you offer discounts?|Yes for regular clients.",
+"How long is a clean?|Depends on size.",
+"Do I need to be home?|Not required.",
+"Do you use safe products?|Yes.",
+"How do I contact you?|Phone, email or WhatsApp."
 ];
 
 const container=document.getElementById("faq-container");
