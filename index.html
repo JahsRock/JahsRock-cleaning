@@ -1,166 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Jah'sRock Ltd - Professional cleaning services in Hatfield, St Albans, Hemel Hempstead. Airbnb, end of tenancy, domestic & commercial cleaning.">
-  <title>Jah'sRock Ltd | Cleaning Services Hertfordshire</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jah'sRock Ltd | Premium Cleaning</title>
 
-  <style>
-    body { margin:0; font-family: Arial, sans-serif; background:#f5f5f5; }
-    header { background:#0b1f3a; color:white; padding:15px; display:flex; justify-content:space-between; flex-wrap:wrap; }
-    nav a { color:white; margin:10px; text-decoration:none; font-weight:bold; }
+<style>
+body { margin:0; font-family: 'Segoe UI', sans-serif; background:#f5f7fb; }
 
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952') center/cover no-repeat; background:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952') center/cover no-repeat; height:75vh; display:flex; flex-direction:column; justify-content:center; align-items:center; color:white; text-align:center; padding:20px; }
+header { background:#0b1f3a; color:white; padding:15px 25px; display:flex; justify-content:space-between; align-items:center; }
+nav a { color:white; margin-left:15px; text-decoration:none; }
 
-    .hero h1 { font-size:42px; font-weight:bold; text-shadow:2px 2px 6px rgba(0,0,0,0.7);} 
-    .hero p { font-size:18px; text-shadow:1px 1px 5px rgba(0,0,0,0.7);} 
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952') center/cover no-repeat;
+  height:70vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  text-align:center;
+}
+.hero h1 { font-size:42px; }
+.btn { background:#ff9800; padding:12px 25px; border-radius:6px; color:white; text-decoration:none; margin-top:15px; }
 
-    .btn { padding:12px 25px; background:#ff9800; color:white; text-decoration:none; border-radius:5px; margin-top:15px; display:inline-block; }
+.section { padding:50px 20px; text-align:center; }
 
-    .section { padding:40px 15px; text-align:center; }
-    .cards { display:flex; flex-wrap:wrap; justify-content:center; gap:15px; }
-    .card { background:white; padding:20px; border-radius:10px; width:260px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+/* PREMIUM QUOTE UI */
+.quote-box {
+  max-width:700px;
+  margin:auto;
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
 
-    .gallery img { width:100%; max-width:250px; border-radius:10px; margin:10px; }
+.row {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:15px;
+  gap:10px;
+}
 
-    .quote-box { background:white; padding:20px; max-width:400px; margin:auto; border-radius:10px; }
+.row label {
+  flex:1;
+  font-weight:bold;
+}
 
-    input, select { width:90%; padding:10px; margin:10px; }
+.row select {
+  flex:1;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #ddd;
+}
 
-    .whatsapp { position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:15px; border-radius:50%; text-decoration:none; }
+.row i {
+  font-style:normal;
+  font-size:20px;
+}
 
-    iframe { width:100%; border:none; }
+button {
+  margin-top:15px;
+  padding:12px;
+  width:100%;
+  background:#0b1f3a;
+  color:white;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.3s;
+}
 
-    footer { background:#0b1f3a; color:white; text-align:center; padding:20px; }
-  </style>
+button:hover { background:#132c52; transform:scale(1.02); }
+
+#result {
+  margin-top:20px;
+  font-size:20px;
+  font-weight:bold;
+  color:#0b1f3a;
+}
+
+/* ANIMATION */
+.fade-in {
+  animation: fade 1s ease-in;
+}
+
+@keyframes fade {
+  from { opacity:0; transform:translateY(10px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+footer { background:#0b1f3a; color:white; text-align:center; padding:20px; }
+</style>
 </head>
+
 <body>
 
 <header>
-  <h2>Jah'sRock Ltd</h2>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#services">Services</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#quote">Quote</a>
-  </nav>
+<h2>Jah'sRock Ltd</h2>
+<nav>
+<a href="#">Home</a>
+<a href="#quote">Quote</a>
+</nav>
 </header>
 
 <section class="hero">
-  <h1>Trusted Cleaning Services in Hertfordshire</h1>
-  <p>Airbnb • End of Tenancy • Commercial • Domestic</p>
-  <p>✔ Fully Insured • ✔ Same-Day Availability</p>
-  <a href="#quote" class="btn">Get Instant Quote</a>
+<h1>Premium Cleaning Services</h1>
+<p>Airbnb • Domestic • Commercial</p>
+<a href="#quote" class="btn">Get Quote</a>
 </section>
 
-<section class="section">
-  <h2>Our Services</h2>
-  <div class="cards">
-    <div class="card">Airbnb Cleaning</div>
-    <div class="card">End of Tenancy</div>
-    <div class="card">Commercial Cleaning</div>
-    <div class="card">Domestic Cleaning</div>
-  </div>
-</section>
+<section id="quote" class="section fade-in">
+<h2>Instant Quote</h2>
 
-<section id="pricing" class="section">
-  <h2>Pricing</h2>
-  <p>Standard Cleaning: From £17/hour</p>
-  <p>Deep Cleaning: From £20/hour</p>
-  <p>End of Tenancy: Custom Quote</p>
-</section>
+<div class="quote-box">
 
-<section class="section">
-  <h2>Before & After</h2>
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1581579186913-45acb3a4a8d1">
-    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a">
-  </div>
-</section>
+<div class="row">
+<i>🛏️</i>
+<label>Bedrooms</label>
+<select id="bedrooms">
+<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option>
+</select>
+<select id="bedrooms_condition"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
+</div>
 
-<section class="section">
-  <h2>Google Reviews</h2>
-  <iframe src="https://www.google.com/maps?q=Jah'sRock+Ltd&output=embed" height="300"></iframe>
-  <p><a href="https://share.google/Aty1EiE2EN5UqRe5Z" target="_blank">View our reviews on Google</a></p>
-</section>
+<div class="row">
+<i>🍳</i>
+<label>Kitchens</label>
+<select id="kitchens"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+<select id="kitchens_condition"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
+</div>
 
-<section id="quote" class="section">
-  <h2>Get Instant Quote</h2>
-  <div class="quote-box">
+<div class="row">
+<i>🛋️</i>
+<label>Living Rooms</label>
+<select id="living"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+<select id="living_condition"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
+</div>
 
-    <label>Bedrooms (1–10)</label>
-    <input type="number" id="bedrooms" min="1" max="10" value="1">
+<div class="row">
+<i>🚽</i>
+<label>Toilets</label>
+<select id="toilets"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>
+<select id="toilets_condition"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
+</div>
 
-    <label>Kitchens</label>
-    <input type="number" id="kitchens" min="0" max="5" value="1">
+<button onclick="calculate()">Calculate Price</button>
+<p id="result"></p>
 
-    <label>Living Rooms</label>
-    <input type="number" id="living" min="0" max="5" value="1">
-
-    <label>Toilets (1–10)</label>
-    <input type="number" id="toilets" min="1" max="10" value="1">
-
-    <label>Condition of Property (1 = Very Clean, 5 = Very Dirty)</label>
-    <select id="condition">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-    </select>
-
-    <button onclick="calculate()">Calculate</button>
-    <p id="result"></p>
-  </div>
+</div>
 </section>
 
 <script>
-function calculate() {
-  let bedrooms = parseInt(document.getElementById('bedrooms').value);
-  let kitchens = parseInt(document.getElementById('kitchens').value);
-  let living = parseInt(document.getElementById('living').value);
-  let toilets = parseInt(document.getElementById('toilets').value);
-  let condition = parseInt(document.getElementById('condition').value);
+function getDiscount(level){return {1:0.20,2:0.15,3:0.10,4:0.05,5:0}[level];}
 
-  // Base pricing
-  let total = 0;
+function calculate(){
+let b=+bedrooms.value,k=+kitchens.value,l=+living.value,t=+toilets.value;
+let bc=+bedrooms_condition.value,kc=+kitchens_condition.value,lc=+living_condition.value,tc=+toilets_condition.value;
 
-  total += bedrooms * 50;
-  total += kitchens * 50;
-  total += living * 50;
+let total=0;
 
-  // Toilets pricing
-  if (toilets >= 1) {
-    total += 50; // first toilet
-    if (toilets > 1) {
-      total += (toilets - 1) * 25;
-    }
-  }
+let bt=b*50; total+=bt-(bt*getDiscount(bc));
+let kt=k*50; total+=kt-(kt*getDiscount(kc));
+let lt=l*50; total+=lt-(lt*getDiscount(lc));
 
-  // Discount logic (cleaner house = higher discount)
-  let discountMap = {
-    1: 0.20,
-    2: 0.15,
-    3: 0.10,
-    4: 0.05,
-    5: 0.00
-  };
+let tt=50+(t-1)*25; total+=tt-(tt*getDiscount(tc));
 
-  let discount = discountMap[condition];
-  let finalPrice = total - (total * discount);
-
-  document.getElementById('result').innerText =
-    "Estimated Price: £" + finalPrice.toFixed(2) +
-    " (Discount applied: " + (discount * 100) + "%)";
+document.getElementById('result').innerText='Estimated Price: £'+total.toFixed(2);
 }
 </script>
 
-<a href="https://wa.me/447386548346?text=Hi%2C%20I%E2%80%99d%20like%20to%20book%20a%20cleaning%20service" class="whatsapp">💬</a>
-
 <footer>
-  <p>📞 07386 548346 | © 2026 Jah'sRock Ltd</p>
+<p>📞 07386 548346 | © Jah'sRock Ltd</p>
 </footer>
 
 </body>
