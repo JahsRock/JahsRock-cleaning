@@ -7,20 +7,17 @@
 <title>Jah'sRock Ltd | Cleaning Services</title>
 
 <style>
-body { margin:0; font-family:'Segoe UI', sans-serif; background:#f5f7fb; }
-header { background:#0b1f3a; color:white; padding:15px 25px; display:flex; justify-content:space-between; }
+body { margin:0; font-family:'Segoe UI', sans-serif; background:#f5f7fb; line-height:1.5; }
+header { background:#0b1f3a; color:white; padding:12px 20px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:10; }
 nav a { color:white; margin-left:15px; text-decoration:none; }
 
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952') center/cover no-repeat;
-  height:70vh; display:flex; flex-direction:column; justify-content:center; align-items:center; color:white; text-align:center;
-}
+.hero { background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952') center/cover no-repeat; height:60vh; display:flex; flex-direction:column; justify-content:center; align-items:center; color:white; text-align:center; padding:16px; margin-bottom:10px; }
 .hero h1 { font-size:42px; }
 .btn { background:#ff9800; padding:12px 25px; border-radius:6px; color:white; text-decoration:none; margin-top:15px; }
 
-.section { padding:50px 20px; text-align:center; }
-.cards { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
-.card { background:white; padding:20px; border-radius:10px; width:250px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+.section { padding:32px 16px; text-align:center; margin:0 auto; max-width:1100px; }
+.cards { display:flex; flex-wrap:wrap; justify-content:center; gap:16px; margin-top:10px; }
+.card { background:white; padding:16px; border-radius:10px; width:260px; box-shadow:0 4px 10px rgba(0,0,0,0.08); }
 
 .gallery img { display:none; }
 
@@ -39,7 +36,7 @@ button { margin-top:15px; padding:12px; width:100%; background:#0b1f3a; color:wh
 #result { margin-top:20px; font-size:20px; font-weight:bold; }
 .disclaimer { margin-top:15px; font-size:13px; color:#666; text-align:center; }
 
-footer { background:#0b1f3a; color:white; text-align:center; padding:20px; }
+footer { background:#0b1f3a; color:white; text-align:center; padding:16px; margin-top:20px; }
 .img-box{position:relative; overflow:hidden; border-radius:12px;}
 .img-box img{width:100%; transition:transform 0.5s ease, opacity 0.5s ease;}
 .img-box:hover img{transform:scale(1.08);} 
@@ -185,27 +182,7 @@ right.style.opacity=1;
 },3000);
 </script>
 
-<section class="section">
-<h2>Our Photos</h2>
-<div style="display:flex; justify-content:center;">
-<div style="width:300px; overflow:hidden; border-radius:10px; box-shadow:0 5px 20px rgba(0,0,0,0.1);">
-<img id="slider" src="https://images.unsplash.com/photo-1581579186913-45acb3a4a8d1" style="width:100%; transition:0.5s;">
-</div>
-</div>
-</section>
 
-<script>
-const images = [
-"https://images.unsplash.com/photo-1581579186913-45acb3a4a8d1",
-"https://images.unsplash.com/photo-1584622650111-993a426fbf0a",
-"https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
-];
-let i = 0;
-setInterval(()=>{
- i = (i+1) % images.length;
- document.getElementById('slider').src = images[i];
-}, 3000);
-</script>
 
 <section class="section">
 <h2>Google Reviews</h2>
@@ -216,6 +193,15 @@ setInterval(()=>{
 <section id="quote" class="section">
 <h2>Instant Quote</h2>
 <div class="quote-box">
+
+<div style="margin-bottom:10px; text-align:left;">
+<label style="font-weight:bold;">Service Type</label>
+<select id="serviceType" style="width:150px; padding:6px; margin-left:10px;">
+<option value="standard">Standard Cleaning</option>
+<option value="deep">Deep Cleaning</option>
+<option value="tenancy">End of Tenancy</option>
+</select>
+</div>
 
 <p><strong>Enter quantity (0–10) and select cleanliness level</strong></p>
 <p style="font-size:14px;">Cleanliness Scale: 1 = Very Clean (Max Discount) | 5 = Very Dirty (No Discount)</p>
@@ -261,15 +247,54 @@ setInterval(()=>{
 
 <script>
 function getDiscount(level){return {1:0.20,2:0.15,3:0.10,4:0.05,5:0}[level];}
+function getDiscount(level){return {1:0.20,2:0.15,3:0.10,4:0.05,5:0}[level];}
+
 function calculate(){
+let serviceType=document.getElementById('serviceType').value;
+
 let b=+bedrooms.value,k=+kitchens.value,l=+living.value,t=+toilets.value;
+let c=+conservatory.value, lo=+lounge.value;
+
 let bc=+bedrooms_condition.value,kc=+kitchens_condition.value,lc=+living_condition.value,tc=+toilets_condition.value;
+let cc=+conservatory_condition.value, loc=+lounge_condition.value;
+
 let total=0;
+
+// Bedrooms
 let bt=b*50; total+=bt-(bt*getDiscount(bc));
+
+// Kitchens
 let kt=k*50; total+=kt-(kt*getDiscount(kc));
+
+// Living
 let lt=l*50; total+=lt-(lt*getDiscount(lc));
-let tt=50+(t-1)*25; total+=tt-(tt*getDiscount(tc));
-document.getElementById('result').innerText='Estimated Price: £'+total.toFixed(2);
+
+// Toilets
+let tt=0;
+if(t>=1){tt+=50; if(t>1) tt+=(t-1)*25;}
+total+=tt-(tt*getDiscount(tc));
+
+// Conservatory
+let ct=c*50; total+=ct-(ct*getDiscount(cc));
+
+// Lounge
+let lot=lo*50; total+=lot-(lot*getDiscount(loc));
+
+// Service type adjustment
+if(serviceType==="standard"){
+ total = total * 0.8; // 20% reduction
+}
+
+// Estimate hours (simple logic)
+let hours = Math.max(2, total / 50);
+let hourlyRate = (serviceType === "standard") ? (total / hours).toFixed(2) : "20+";
+
+// Display
+let resultText = "Estimated Price: £"+total.toFixed(2);
+resultText += " | Estimated Hours: "+hours.toFixed(1);
+resultText += " | Rate: £"+hourlyRate+"/hr";
+
+document.getElementById('result').innerText=resultText;
 }
 </script>
 
