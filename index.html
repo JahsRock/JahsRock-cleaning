@@ -3,44 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jah'sRock Ltd | Professional Cleaning</title>
+  <meta name="description" content="Jah'sRock Ltd - Professional cleaning services in Hatfield, St Albans, Hemel Hempstead. Airbnb, end of tenancy, domestic & commercial cleaning.">
+  <title>Jah'sRock Ltd | Cleaning Services Hertfordshire</title>
+
   <style>
     body { margin:0; font-family: Arial, sans-serif; background:#f5f5f5; }
-    header { background:#0b1f3a; color:white; padding:15px 30px; display:flex; justify-content:space-between; align-items:center; }
-    nav a { color:white; margin-left:15px; text-decoration:none; font-weight:bold; }
+    header { background:#0b1f3a; color:white; padding:15px; display:flex; justify-content:space-between; flex-wrap:wrap; }
+    nav a { color:white; margin:10px; text-decoration:none; font-weight:bold; }
 
-    .hero {
-      background:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952') center/cover no-repeat;
-      height:70vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      color:white;
-      text-align:center;
-    }
-    .hero h1 { font-size:40px; margin-bottom:10px; }
-    .hero p { font-size:18px; }
-    .btn {
-      margin-top:20px;
-      padding:12px 25px;
-      background:#ff9800;
-      color:white;
-      text-decoration:none;
-      border-radius:5px;
-      font-weight:bold;
-    }
+    .hero { background:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952') center/cover no-repeat; height:75vh; display:flex; flex-direction:column; justify-content:center; align-items:center; color:white; text-align:center; padding:20px; }
 
-    .section { padding:50px 20px; text-align:center; }
-    .cards { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
-    .card {
-      background:white;
-      padding:20px;
-      border-radius:10px;
-      width:250px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.1);
-    }
-    .card img { width:100%; border-radius:10px; }
+    .btn { padding:12px 25px; background:#ff9800; color:white; text-decoration:none; border-radius:5px; margin-top:15px; display:inline-block; }
+
+    .section { padding:40px 15px; text-align:center; }
+    .cards { display:flex; flex-wrap:wrap; justify-content:center; gap:15px; }
+    .card { background:white; padding:20px; border-radius:10px; width:260px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+
+    .gallery img { width:100%; max-width:250px; border-radius:10px; margin:10px; }
+
+    .quote-box { background:white; padding:20px; max-width:400px; margin:auto; border-radius:10px; }
+
+    input, select { width:90%; padding:10px; margin:10px; }
+
+    .whatsapp { position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:15px; border-radius:50%; text-decoration:none; }
+
+    iframe { width:100%; border:none; }
 
     footer { background:#0b1f3a; color:white; text-align:center; padding:20px; }
   </style>
@@ -52,57 +39,87 @@
   <nav>
     <a href="#">Home</a>
     <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#quote">Quote</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h1>Professional Cleaning Services You Can Trust</h1>
-  <p>Reliable, fully insured & Airbnb specialists</p>
-  <a href="#contact" class="btn">Book Now</a>
+  <h1>Trusted Cleaning Services in Hertfordshire</h1>
+  <p>Airbnb • End of Tenancy • Commercial • Domestic</p>
+  <p>✔ Fully Insured • ✔ Same-Day Availability</p>
+  <a href="#quote" class="btn">Get Instant Quote</a>
 </section>
 
 <section class="section">
-  <h2>Why Choose Us</h2>
-  <div class="cards">
-    <div class="card">⭐ 5+ Years Experience</div>
-    <div class="card">🧼 Airbnb Specialists</div>
-    <div class="card">🔒 Fully Insured</div>
-    <div class="card">⏱ Reliable & On-Time</div>
-  </div>
-</section>
-
-<section id="services" class="section">
   <h2>Our Services</h2>
   <div class="cards">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c">
-      <h3>Home Cleaning</h3>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
-      <h3>Airbnb Cleaning</h3>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a">
-      <h3>Deep Cleaning</h3>
-    </div>
+    <div class="card">Airbnb Cleaning</div>
+    <div class="card">End of Tenancy</div>
+    <div class="card">Commercial Cleaning</div>
+    <div class="card">Domestic Cleaning</div>
+  </div>
+</section>
+
+<section id="pricing" class="section">
+  <h2>Pricing</h2>
+  <p>Standard Cleaning: From £17/hour</p>
+  <p>Deep Cleaning: From £20/hour</p>
+  <p>End of Tenancy: Custom Quote</p>
+</section>
+
+<section class="section">
+  <h2>Before & After</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1581579186913-45acb3a4a8d1">
+    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a">
   </div>
 </section>
 
 <section class="section">
-  <h2>What Our Clients Say</h2>
-  <p>"Excellent service, very reliable and detailed cleaning."</p>
+  <h2>Google Reviews</h2>
+  <iframe src="https://www.google.com/maps?q=Jah'sRock+Ltd&output=embed" height="300"></iframe>
+  <p><a href="https://share.google/Aty1EiE2EN5UqRe5Z" target="_blank">View our reviews on Google</a></p>
 </section>
 
-<section id="contact" class="section">
-  <h2>Contact Us</h2>
-  <p>📞 07386 548346</p>
-  <p>📧 jahsrockcleaning@gmail.com</p>
+<section id="quote" class="section">
+  <h2>Get Instant Quote</h2>
+  <div class="quote-box">
+    <select id="bedrooms">
+      <option value="2">2 Bedrooms</option>
+      <option value="3">3 Bedrooms</option>
+      <option value="4">4 Bedrooms</option>
+    </select>
+    <select id="bathrooms">
+      <option value="1">1 Bathroom</option>
+      <option value="2">2 Bathrooms</option>
+    </select>
+    <select id="type">
+      <option value="17">Standard Cleaning</option>
+      <option value="20">Deep Cleaning</option>
+    </select>
+    <button onclick="calculate()">Calculate</button>
+    <p id="result"></p>
+  </div>
 </section>
+
+<script>
+function calculate() {
+  let bedrooms = parseInt(document.getElementById('bedrooms').value);
+  let bathrooms = parseInt(document.getElementById('bathrooms').value);
+  let rate = parseInt(document.getElementById('type').value);
+
+  let hours = (bedrooms * 1.5) + (bathrooms * 0.5);
+  let total = hours * rate;
+
+  document.getElementById('result').innerText = "Estimated Price: £" + total;
+}
+</script>
+
+<a href="https://wa.me/447386548346?text=Hi%2C%20I%E2%80%99d%20like%20to%20book%20a%20cleaning%20service" class="whatsapp">💬</a>
 
 <footer>
-  <p>© 2026 Jah'sRock Ltd. All rights reserved.</p>
+  <p>📞 07386 548346 | © 2026 Jah'sRock Ltd</p>
 </footer>
 
 </body>
