@@ -16,8 +16,13 @@ nav a { color:white; margin-left:15px; text-decoration:none; }
 .btn { background:#ff9800; padding:12px 25px; border-radius:6px; color:white; text-decoration:none; margin-top:15px; }
 
 .section { padding:32px 16px; text-align:center; margin:0 auto; max-width:1100px; }
-.cards { display:flex; flex-wrap:wrap; justify-content:center; gap:16px; margin-top:10px; }
-.card { background:white; padding:16px; border-radius:10px; width:260px; box-shadow:0 4px 10px rgba(0,0,0,0.08); }
+.cards { display:flex; flex-wrap:nowrap; justify-content:space-between; gap:16px; margin-top:10px; overflow-x:auto; }
+@media(min-width:1024px){
+  .cards{flex-wrap:nowrap;}
+}
+.card { background:white; padding:16px; border-radius:10px; width:24%; min-width:240px; box-shadow:0 4px 10px rgba(0,0,0,0.08); display:flex; flex-direction:column; justify-content:space-between; transition:0.3s ease; }
+.card:hover{ transform:translateY(-5px); box-shadow:0 10px 25px rgba(0,0,0,0.15);} 
+.card h3{ display:flex; align-items:center; gap:8px; justify-content:center; }
 
 .gallery img { display:none; }
 
@@ -70,7 +75,7 @@ footer { background:#0b1f3a; color:white; text-align:center; padding:16px; margi
 <div class="cards">
 
 <div class="card">
-<h3>Airbnb Cleaning</h3>
+<h3>🏠 Airbnb Cleaning</h3>
 <p>Our Airbnb cleaning service is tailored for short-let properties requiring fast turnaround and high presentation standards. We ensure your property is guest-ready after every stay.</p>
 <ul>
 <li>Full surface cleaning and sanitisation</li>
@@ -84,7 +89,7 @@ footer { background:#0b1f3a; color:white; text-align:center; padding:16px; margi
 </div>
 
 <div class="card">
-<h3>End of Tenancy Cleaning</h3>
+<h3>📦 End of Tenancy Cleaning</h3>
 <p>Our end of tenancy cleaning is a comprehensive deep clean designed to meet landlord and letting agent standards, helping tenants secure their deposit return.</p>
 <ul>
 <li>Deep cleaning of all rooms including skirting boards and corners</li>
@@ -99,7 +104,7 @@ footer { background:#0b1f3a; color:white; text-align:center; padding:16px; margi
 </div>
 
 <div class="card">
-<h3>Commercial Cleaning</h3>
+<h3>🏢 Commercial Cleaning</h3>
 <p>We provide reliable commercial cleaning services tailored to offices, shops, and business environments, ensuring a clean and professional workspace.</p>
 <ul>
 <li>Workstation and desk cleaning</li>
@@ -113,7 +118,7 @@ footer { background:#0b1f3a; color:white; text-align:center; padding:16px; margi
 </div>
 
 <div class="card">
-<h3>Domestic Cleaning</h3>
+<h3>🧼 Domestic Cleaning</h3>
 <p>Our domestic cleaning service keeps your home consistently clean, comfortable, and hygienic with attention to detail in every visit.</p>
 <ul>
 <li>General dusting and surface cleaning</li>
@@ -286,7 +291,7 @@ if(serviceType==="standard"){
 }
 
 // Estimate hours (simple logic)
-let hours = Math.max(2, total / 50);
+let hours = Math.max(4, total / 50);
 let hourlyRate = (serviceType === "standard") ? (total / hours).toFixed(2) : "20+";
 
 // Display
