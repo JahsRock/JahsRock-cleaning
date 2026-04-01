@@ -22,18 +22,31 @@ nav a { color:white; margin-left:15px; text-decoration:none; }
 .cards { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
 .card { background:white; padding:20px; border-radius:10px; width:250px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
 
-.gallery img { width:250px; border-radius:10px; margin:10px; }
+.gallery img { display:none; }
 
 /* QUOTE UI */
 .quote-box { max-width:700px; margin:auto; background:white; padding:30px; border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.1);} 
+.header-row{display:flex; justify-content:space-between; margin-bottom:10px; font-weight:bold;}
+.header-row span{flex:1; text-align:center;} 
+.row { display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; gap:10px; }
+.row label { flex:1; font-weight:bold; }
+.row select { flex:0.7; padding:8px; border-radius:6px; border:1px solid #ddd; font-size:14px;} 
 .row { display:flex; align-items:center; justify-content:space-between; margin-bottom:15px; gap:10px; }
 .row label { flex:1; font-weight:bold; }
 .row select { flex:1; padding:10px; border-radius:8px; border:1px solid #ddd; }
 .row i { font-style:normal; }
 button { margin-top:15px; padding:12px; width:100%; background:#0b1f3a; color:white; border:none; border-radius:8px; }
 #result { margin-top:20px; font-size:20px; font-weight:bold; }
+.disclaimer { margin-top:15px; font-size:13px; color:#666; text-align:center; }
 
 footer { background:#0b1f3a; color:white; text-align:center; padding:20px; }
+.img-box{position:relative; overflow:hidden; border-radius:12px;}
+.img-box img{width:100%; transition:transform 0.5s ease, opacity 0.5s ease;}
+.img-box:hover img{transform:scale(1.08);} 
+.label{position:absolute; bottom:10px; left:10px; background:rgba(0,0,0,0.6); color:#fff; padding:5px 10px; border-radius:6px; font-size:12px;}
+@media(max-width:768px){
+  .img-box{margin-bottom:15px;}
+}
 </style>
 </head>
 
@@ -70,6 +83,7 @@ footer { background:#0b1f3a; color:white; text-align:center; padding:20px; }
 <li>Restocking essentials (on request)</li>
 <li>Final inspection to ensure hotel-level presentation</li>
 </ul>
+<p><strong>Deep cleaning is also available.</strong></p>
 </div>
 
 <div class="card">
@@ -84,6 +98,7 @@ footer { background:#0b1f3a; color:white; text-align:center; padding:20px; }
 <li>Removal of limescale, stains, and built-up dirt</li>
 <li>Detailed checklist-based cleaning to ensure nothing is missed</li>
 </ul>
+<p><strong>Deep cleaning is also available.</strong></p>
 </div>
 
 <div class="card">
@@ -97,6 +112,7 @@ footer { background:#0b1f3a; color:white; text-align:center; padding:20px; }
 <li>Dusting and sanitising high-touch areas</li>
 <li>Flexible scheduling (daily, weekly, or custom)</li>
 </ul>
+<p><strong>Deep cleaning is also available.</strong></p>
 </div>
 
 <div class="card">
@@ -110,6 +126,7 @@ footer { background:#0b1f3a; color:white; text-align:center; padding:20px; }
 <li>Cleaning under furniture where accessible</li>
 <li>Customised cleaning based on your preferences</li>
 </ul>
+<p><strong>Deep cleaning is also available.</strong></p>
 </div>
 
 </div>
@@ -117,18 +134,78 @@ footer { background:#0b1f3a; color:white; text-align:center; padding:20px; }
 
 <section id="pricing" class="section">
 <h2>Pricing</h2>
+<div style="display:flex; justify-content:center; align-items:flex-start; gap:20px; flex-wrap:wrap;">
+
+<div style="width:220px;">
+<div class="img-box">
+<img id="leftSlider" src="https://images.unsplash.com/photo-1581579186913-45acb3a4a8d1">
+<span class="label">Before / After</span>
+</div>
+</div>
+
+<div>
 <p>Standard Cleaning: From £17/hour</p>
 <p>Deep Cleaning: From £20/hour</p>
 <p>End of Tenancy: Custom Quote</p>
-</section>
+</div>
 
-<section class="section">
-<h2>Before & After</h2>
-<div class="gallery">
-<img src="https://images.unsplash.com/photo-1581579186913-45acb3a4a8d1">
-<img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a">
+<div style="width:220px;">
+<div class="img-box">
+<img id="rightSlider" src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a">
+<span class="label">Our Work</span>
+</div>
+</div>
+
 </div>
 </section>
+
+<script>
+const leftImages=[
+"https://images.unsplash.com/photo-1581579186913-45acb3a4a8d1",
+"https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+];
+const rightImages=[
+"https://images.unsplash.com/photo-1584622650111-993a426fbf0a",
+"https://images.unsplash.com/photo-1581578731548-c64695cc6952"
+];
+let li=0,ri=0;
+setInterval(()=>{
+li=(li+1)%leftImages.length;
+ri=(ri+1)%rightImages.length;
+let left=document.getElementById('leftSlider');
+let right=document.getElementById('rightSlider');
+left.style.opacity=0;
+right.style.opacity=0;
+setTimeout(()=>{
+left.src=leftImages[li];
+right.src=rightImages[ri];
+left.style.opacity=1;
+right.style.opacity=1;
+},300);
+},3000);
+</script>
+
+<section class="section">
+<h2>Our Photos</h2>
+<div style="display:flex; justify-content:center;">
+<div style="width:300px; overflow:hidden; border-radius:10px; box-shadow:0 5px 20px rgba(0,0,0,0.1);">
+<img id="slider" src="https://images.unsplash.com/photo-1581579186913-45acb3a4a8d1" style="width:100%; transition:0.5s;">
+</div>
+</div>
+</section>
+
+<script>
+const images = [
+"https://images.unsplash.com/photo-1581579186913-45acb3a4a8d1",
+"https://images.unsplash.com/photo-1584622650111-993a426fbf0a",
+"https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+];
+let i = 0;
+setInterval(()=>{
+ i = (i+1) % images.length;
+ document.getElementById('slider').src = images[i];
+}, 3000);
+</script>
 
 <section class="section">
 <h2>Google Reviews</h2>
@@ -139,6 +216,15 @@ footer { background:#0b1f3a; color:white; text-align:center; padding:20px; }
 <section id="quote" class="section">
 <h2>Instant Quote</h2>
 <div class="quote-box">
+
+<p><strong>Enter quantity (0–10) and select cleanliness level</strong></p>
+<p style="font-size:14px;">Cleanliness Scale: 1 = Very Clean (Max Discount) | 5 = Very Dirty (No Discount)</p>
+
+<div class="header-row">
+<span></span>
+<span>Quantity</span>
+<span>Cleanliness (1–5)</span>
+</div>
 
 <div class="row"><i>🛏️</i><label>Bedrooms</label>
 <select id="bedrooms"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>
@@ -156,8 +242,19 @@ footer { background:#0b1f3a; color:white; text-align:center; padding:20px; }
 <select id="toilets"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>
 <select id="toilets_condition"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
 
+<div class="row"><i>🌿</i><label>Conservatory</label>
+<select id="conservatory"><option value="0">0</option><option value="1">1</option><option value="2">2</option></select>
+<select id="conservatory_condition"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
+</div>
+
+<div class="row"><i>🪑</i><label>Lounge</label>
+<select id="lounge"><option value="0">0</option><option value="1">1</option><option value="2">2</option></select>
+<select id="lounge_condition"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
+</div>
+
 <button onclick="calculate()">Calculate Price</button>
 <p id="result"></p>
+<p class="disclaimer">This is an estimated quotation provided for guidance only. Final pricing may vary slightly depending on the actual condition and specific requirements of the property.</p>
 
 </div>
 </section>
