@@ -3,94 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jah'sRock Ltd | Premium Cleaning</title>
+<meta name="description" content="Jah'sRock Ltd - Professional cleaning services in Hatfield, St Albans, Hemel Hempstead.">
+<title>Jah'sRock Ltd | Cleaning Services</title>
 
 <style>
-body { margin:0; font-family: 'Segoe UI', sans-serif; background:#f5f7fb; }
-
-header { background:#0b1f3a; color:white; padding:15px 25px; display:flex; justify-content:space-between; align-items:center; }
+body { margin:0; font-family:'Segoe UI', sans-serif; background:#f5f7fb; }
+header { background:#0b1f3a; color:white; padding:15px 25px; display:flex; justify-content:space-between; }
 nav a { color:white; margin-left:15px; text-decoration:none; }
 
 .hero {
   background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952') center/cover no-repeat;
-  height:70vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  color:white;
-  text-align:center;
+  height:70vh; display:flex; flex-direction:column; justify-content:center; align-items:center; color:white; text-align:center;
 }
 .hero h1 { font-size:42px; }
 .btn { background:#ff9800; padding:12px 25px; border-radius:6px; color:white; text-decoration:none; margin-top:15px; }
 
 .section { padding:50px 20px; text-align:center; }
+.cards { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+.card { background:white; padding:20px; border-radius:10px; width:250px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
 
-/* PREMIUM QUOTE UI */
-.quote-box {
-  max-width:700px;
-  margin:auto;
-  background:white;
-  padding:30px;
-  border-radius:15px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.1);
-}
+.gallery img { width:250px; border-radius:10px; margin:10px; }
 
-.row {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-bottom:15px;
-  gap:10px;
-}
-
-.row label {
-  flex:1;
-  font-weight:bold;
-}
-
-.row select {
-  flex:1;
-  padding:10px;
-  border-radius:8px;
-  border:1px solid #ddd;
-}
-
-.row i {
-  font-style:normal;
-  font-size:20px;
-}
-
-button {
-  margin-top:15px;
-  padding:12px;
-  width:100%;
-  background:#0b1f3a;
-  color:white;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-button:hover { background:#132c52; transform:scale(1.02); }
-
-#result {
-  margin-top:20px;
-  font-size:20px;
-  font-weight:bold;
-  color:#0b1f3a;
-}
-
-/* ANIMATION */
-.fade-in {
-  animation: fade 1s ease-in;
-}
-
-@keyframes fade {
-  from { opacity:0; transform:translateY(10px); }
-  to { opacity:1; transform:translateY(0); }
-}
+/* QUOTE UI */
+.quote-box { max-width:700px; margin:auto; background:white; padding:30px; border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.1);} 
+.row { display:flex; align-items:center; justify-content:space-between; margin-bottom:15px; gap:10px; }
+.row label { flex:1; font-weight:bold; }
+.row select { flex:1; padding:10px; border-radius:8px; border:1px solid #ddd; }
+.row i { font-style:normal; }
+button { margin-top:15px; padding:12px; width:100%; background:#0b1f3a; color:white; border:none; border-radius:8px; }
+#result { margin-top:20px; font-size:20px; font-weight:bold; }
 
 footer { background:#0b1f3a; color:white; text-align:center; padding:20px; }
 </style>
@@ -102,50 +43,68 @@ footer { background:#0b1f3a; color:white; text-align:center; padding:20px; }
 <h2>Jah'sRock Ltd</h2>
 <nav>
 <a href="#">Home</a>
+<a href="#services">Services</a>
+<a href="#pricing">Pricing</a>
 <a href="#quote">Quote</a>
 </nav>
 </header>
 
 <section class="hero">
-<h1>Premium Cleaning Services</h1>
-<p>Airbnb • Domestic • Commercial</p>
+<h1>Trusted Cleaning Services in Hertfordshire</h1>
+<p>Airbnb • End of Tenancy • Commercial • Domestic</p>
 <a href="#quote" class="btn">Get Quote</a>
 </section>
 
-<section id="quote" class="section fade-in">
-<h2>Instant Quote</h2>
+<section id="services" class="section">
+<h2>Our Services</h2>
+<div class="cards">
+<div class="card">Airbnb Cleaning</div>
+<div class="card">End of Tenancy</div>
+<div class="card">Commercial Cleaning</div>
+<div class="card">Domestic Cleaning</div>
+</div>
+</section>
 
+<section id="pricing" class="section">
+<h2>Pricing</h2>
+<p>Standard Cleaning: From £17/hour</p>
+<p>Deep Cleaning: From £20/hour</p>
+<p>End of Tenancy: Custom Quote</p>
+</section>
+
+<section class="section">
+<h2>Before & After</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1581579186913-45acb3a4a8d1">
+<img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a">
+</div>
+</section>
+
+<section class="section">
+<h2>Google Reviews</h2>
+<iframe src="https://www.google.com/maps?q=Jah'sRock+Ltd&output=embed" height="300"></iframe>
+<p><a href="https://share.google/Aty1EiE2EN5UqRe5Z" target="_blank">View our reviews on Google</a></p>
+</section>
+
+<section id="quote" class="section">
+<h2>Instant Quote</h2>
 <div class="quote-box">
 
-<div class="row">
-<i>🛏️</i>
-<label>Bedrooms</label>
-<select id="bedrooms">
-<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option>
-</select>
-<select id="bedrooms_condition"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
-</div>
+<div class="row"><i>🛏️</i><label>Bedrooms</label>
+<select id="bedrooms"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>
+<select id="bedrooms_condition"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
 
-<div class="row">
-<i>🍳</i>
-<label>Kitchens</label>
+<div class="row"><i>🍳</i><label>Kitchens</label>
 <select id="kitchens"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
-<select id="kitchens_condition"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
-</div>
+<select id="kitchens_condition"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
 
-<div class="row">
-<i>🛋️</i>
-<label>Living Rooms</label>
+<div class="row"><i>🛋️</i><label>Living Rooms</label>
 <select id="living"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
-<select id="living_condition"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
-</div>
+<select id="living_condition"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
 
-<div class="row">
-<i>🚽</i>
-<label>Toilets</label>
+<div class="row"><i>🚽</i><label>Toilets</label>
 <select id="toilets"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>
-<select id="toilets_condition"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
-</div>
+<select id="toilets_condition"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
 
 <button onclick="calculate()">Calculate Price</button>
 <p id="result"></p>
@@ -155,19 +114,14 @@ footer { background:#0b1f3a; color:white; text-align:center; padding:20px; }
 
 <script>
 function getDiscount(level){return {1:0.20,2:0.15,3:0.10,4:0.05,5:0}[level];}
-
 function calculate(){
 let b=+bedrooms.value,k=+kitchens.value,l=+living.value,t=+toilets.value;
 let bc=+bedrooms_condition.value,kc=+kitchens_condition.value,lc=+living_condition.value,tc=+toilets_condition.value;
-
 let total=0;
-
 let bt=b*50; total+=bt-(bt*getDiscount(bc));
 let kt=k*50; total+=kt-(kt*getDiscount(kc));
 let lt=l*50; total+=lt-(lt*getDiscount(lc));
-
 let tt=50+(t-1)*25; total+=tt-(tt*getDiscount(tc));
-
 document.getElementById('result').innerText='Estimated Price: £'+total.toFixed(2);
 }
 </script>
