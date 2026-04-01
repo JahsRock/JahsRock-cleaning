@@ -89,19 +89,28 @@
 <section id="quote" class="section">
   <h2>Get Instant Quote</h2>
   <div class="quote-box">
-    <select id="bedrooms">
-      <option value="2">2 Bedrooms</option>
-      <option value="3">3 Bedrooms</option>
-      <option value="4">4 Bedrooms</option>
+
+    <label>Bedrooms (1–10)</label>
+    <input type="number" id="bedrooms" min="1" max="10" value="1">
+
+    <label>Kitchens</label>
+    <input type="number" id="kitchens" min="0" max="5" value="1">
+
+    <label>Living Rooms</label>
+    <input type="number" id="living" min="0" max="5" value="1">
+
+    <label>Toilets (1–10)</label>
+    <input type="number" id="toilets" min="1" max="10" value="1">
+
+    <label>Condition of Property (1 = Very Clean, 5 = Very Dirty)</label>
+    <select id="condition">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
     </select>
-    <select id="bathrooms">
-      <option value="1">1 Bathroom</option>
-      <option value="2">2 Bathrooms</option>
-    </select>
-    <select id="type">
-      <option value="17">Standard Cleaning</option>
-      <option value="20">Deep Cleaning</option>
-    </select>
+
     <button onclick="calculate()">Calculate</button>
     <p id="result"></p>
   </div>
@@ -110,13 +119,41 @@
 <script>
 function calculate() {
   let bedrooms = parseInt(document.getElementById('bedrooms').value);
-  let bathrooms = parseInt(document.getElementById('bathrooms').value);
-  let rate = parseInt(document.getElementById('type').value);
+  let kitchens = parseInt(document.getElementById('kitchens').value);
+  let living = parseInt(document.getElementById('living').value);
+  let toilets = parseInt(document.getElementById('toilets').value);
+  let condition = parseInt(document.getElementById('condition').value);
 
-  let hours = (bedrooms * 1.5) + (bathrooms * 0.5);
-  let total = hours * rate;
+  // Base pricing
+  let total = 0;
 
-  document.getElementById('result').innerText = "Estimated Price: £" + total;
+  total += bedrooms * 50;
+  total += kitchens * 50;
+  total += living * 50;
+
+  // Toilets pricing
+  if (toilets >= 1) {
+    total += 50; // first toilet
+    if (toilets > 1) {
+      total += (toilets - 1) * 25;
+    }
+  }
+
+  // Discount logic (cleaner house = higher discount)
+  let discountMap = {
+    1: 0.20,
+    2: 0.15,
+    3: 0.10,
+    4: 0.05,
+    5: 0.00
+  };
+
+  let discount = discountMap[condition];
+  let finalPrice = total - (total * discount);
+
+  document.getElementById('result').innerText =
+    "Estimated Price: £" + finalPrice.toFixed(2) +
+    " (Discount applied: " + (discount * 100) + "%)";
 }
 </script>
 
