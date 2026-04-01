@@ -1,38 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Jah'sRock Ltd</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jah'sRock Ltd | Professional Cleaning</title>
+  <style>
+    body { margin:0; font-family: Arial, sans-serif; background:#f5f5f5; }
+    header { background:#0b1f3a; color:white; padding:15px 30px; display:flex; justify-content:space-between; align-items:center; }
+    nav a { color:white; margin-left:15px; text-decoration:none; font-weight:bold; }
 
-<style>
-body{font-family:Arial;margin:0;background:#f5f7fa;color:#0A1F44;}
-.header{display:flex;justify-content:space-between;padding:15px;background:white;}
-.nav a{margin:5px;background:#0A1F44;color:white;padding:10px;text-decoration:none;border-radius:6px;}
-.hero{text-align:center;padding:40px;}
-footer{background:#0A1F44;color:white;text-align:center;padding:20px;}
-</style>
+    .hero {
+      background:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952') center/cover no-repeat;
+      height:70vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      color:white;
+      text-align:center;
+    }
+    .hero h1 { font-size:40px; margin-bottom:10px; }
+    .hero p { font-size:18px; }
+    .btn {
+      margin-top:20px;
+      padding:12px 25px;
+      background:#ff9800;
+      color:white;
+      text-decoration:none;
+      border-radius:5px;
+      font-weight:bold;
+    }
+
+    .section { padding:50px 20px; text-align:center; }
+    .cards { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+    .card {
+      background:white;
+      padding:20px;
+      border-radius:10px;
+      width:250px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+    .card img { width:100%; border-radius:10px; }
+
+    footer { background:#0b1f3a; color:white; text-align:center; padding:20px; }
+  </style>
 </head>
-
 <body>
 
-<div class="header">
-<h3>Jah'sRock Ltd</h3>
+<header>
+  <h2>Jah'sRock Ltd</h2>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-<div class="nav">
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="booking.html">Book</a>
-<a href="faq.html">FAQ</a>
-</div>
-</div>
+<section class="hero">
+  <h1>Professional Cleaning Services You Can Trust</h1>
+  <p>Reliable, fully insured & Airbnb specialists</p>
+  <a href="#contact" class="btn">Book Now</a>
+</section>
 
-<div class="hero">
-<h1>Professional Cleaning Services</h1>
-<p>Reliable, affordable and fully insured</p>
-</div>
+<section class="section">
+  <h2>Why Choose Us</h2>
+  <div class="cards">
+    <div class="card">⭐ 5+ Years Experience</div>
+    <div class="card">🧼 Airbnb Specialists</div>
+    <div class="card">🔒 Fully Insured</div>
+    <div class="card">⏱ Reliable & On-Time</div>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <h2>Our Services</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c">
+      <h3>Home Cleaning</h3>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+      <h3>Airbnb Cleaning</h3>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a">
+      <h3>Deep Cleaning</h3>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>What Our Clients Say</h2>
+  <p>"Excellent service, very reliable and detailed cleaning."</p>
+</section>
+
+<section id="contact" class="section">
+  <h2>Contact Us</h2>
+  <p>📞 07386 548346</p>
+  <p>📧 jahsrockcleaning@gmail.com</p>
+</section>
 
 <footer>
-📞 07386 548346 | ✉️ jahsrockcleaning@gmail.com
+  <p>© 2026 Jah'sRock Ltd. All rights reserved.</p>
 </footer>
 
 </body>
